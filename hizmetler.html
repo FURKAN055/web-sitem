@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hizmetlerimiz - Teknoay Bilişim</title>
+    <title>Hizmetler - Teknoay Bilişim</title>
     <style>
         :root {
             --arka-plan: #000000;
             --ana-pembe: #ff007f;
-            --yazi-beyaz: #ffffff;
             --kart-arkaplan: #ffffff;
         }
 
@@ -16,19 +15,19 @@
 
         body { 
             background-color: var(--arka-plan); 
-            color: var(--yazi-beyaz); 
-            font-family: 'Inter', sans-serif; 
+            color: #ffffff; 
+            font-family: 'Inter', 'Segoe UI', sans-serif; 
             line-height: 1.6;
         }
 
-        /* NAVİGASYON */
+        /* NAVBAR */
         nav { 
             display: flex; 
             justify-content: space-between; 
             align-items: center; 
             padding: 20px 8%; 
             background: #000; 
-            border-bottom: 1px solid #333;
+            border-bottom: 1px solid #222;
             position: sticky; top: 0; z-index: 1000;
         }
         .logo { font-size: 26px; color: var(--ana-pembe); font-weight: 900; text-decoration: none; }
@@ -37,19 +36,19 @@
 
         .container { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
 
-        /* ÜST PEMBE BANNER */
-        .pink-banner { 
+        /* HİZMETLERİMİZ PEMBE BANNER */
+        .pink-header { 
             background: linear-gradient(135deg, #ff007f 0%, #cc0066 100%); 
-            border-radius: 25px; 
-            padding: 50px; 
+            border-radius: 30px; 
+            padding: 60px 40px; 
             text-align: center;
             margin-bottom: 50px;
-            box-shadow: 0 15px 40px rgba(255, 0, 127, 0.4);
+            box-shadow: 0 15px 40px rgba(255, 0, 127, 0.3);
         }
-        .pink-banner h1 { font-size: 2.8rem; margin-bottom: 15px; color: white; font-weight: 800; }
-        .pink-banner p { font-size: 1.2rem; color: white; opacity: 0.9; }
+        .pink-header h1 { font-size: 3rem; font-weight: 900; color: white; margin-bottom: 15px; }
+        .pink-header p { font-size: 1.1rem; color: white; opacity: 0.9; }
 
-        /* HİZMET KARTLARI - YAN YANA ÜÇLÜ DÜZEN */
+        /* BEYAZ HİZMET KARTLARI DÜZENİ */
         .services-grid { 
             display: grid; 
             grid-template-columns: repeat(3, 1fr); 
@@ -60,25 +59,23 @@
         .service-card { 
             background: var(--kart-arkaplan); 
             color: black; 
-            padding: 30px; 
-            border-radius: 20px; 
+            padding: 35px 25px; 
+            border-radius: 25px; 
             text-decoration: none; 
             transition: 0.4s; 
-            display: flex;
-            flex-direction: column;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
-        .service-card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(255, 0, 127, 0.2); }
-        .service-card h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 12px; color: #000; }
-        .service-card p { font-size: 0.9rem; color: #555; }
+        .service-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(255, 0, 127, 0.2); }
+        .service-card h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 15px; color: #000; }
+        .service-card p { font-size: 0.9rem; color: #555; line-height: 1.5; }
 
         /* NEDEN BİZ VE İSTATİSTİKLER */
-        .why-us-section { background: #080808; padding: 80px 0; border-top: 1px solid #1a1a1a; }
+        .why-us-section { background: #080808; padding: 100px 0; border-top: 1px solid #1a1a1a; margin-top: 50px; }
         .why-us-flex { display: flex; max-width: 1200px; margin: 0 auto; padding: 0 20px; gap: 60px; align-items: center; }
         
         .why-us-text { flex: 1.5; }
-        .why-us-text h2 { font-size: 3rem; color: var(--ana-pembe); margin-bottom: 25px; font-weight: 900; }
-        .why-us-text p { font-size: 1.1rem; color: #ddd; margin-bottom: 15px; }
+        .why-us-text h2 { font-size: 3rem; color: var(--ana-pembe); margin-bottom: 30px; font-weight: 900; }
+        .why-us-text p { font-size: 1.1rem; color: #ddd; margin-bottom: 20px; }
 
         .stats-side { flex: 1; display: flex; flex-direction: column; gap: 20px; }
         .stat-box { 
@@ -92,19 +89,29 @@
         .stat-box span { font-size: 0.8rem; color: white; opacity: 0.7; text-transform: uppercase; letter-spacing: 2px; }
 
         /* FOOTER */
-        footer { 
-            background: #000; 
-            border-top: 2px solid var(--ana-pembe); 
-            padding: 60px 8% 30px; 
-            display: flex; 
-            justify-content: space-between;
-            color: #aaa;
-        }
-        .footer-logo { color: var(--ana-pembe); font-weight: 900; }
+        footer { background: #000; border-top: 2px solid var(--ana-pembe); padding: 50px 8% 30px; display: flex; justify-content: space-between; align-items: center; }
+        .footer-text { color: #888; font-size: 0.9rem; }
 
         /* WHATSAPP */
-        .whatsapp-float { 
+        .whatsapp-btn { 
             position: fixed; bottom: 30px; right: 30px; background: #25d366; 
             width: 65px; height: 65px; border-radius: 50%; display: flex; 
-            align-items: center; justify-content: center; z-index: 9999;
-            box-shadow: 0 10px 20px rgba(0,0
+            align-items: center; justify-content: center; z-index: 1000;
+            border: 2px solid white; box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        @media (max-width: 1100px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 800px) { 
+            .services-grid { grid-template-columns: 1fr; }
+            .why-us-flex { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">TEKNOAY</a>
+        <div class="menu">
+            <a href="index.html">Ana Sayfa</a>
+            <a href="hakkimda.html">Hakkımda</a>
+            <a href="h
