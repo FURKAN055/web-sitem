@@ -14,11 +14,11 @@
             --vurgu-gradyan: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
         }
 
-        body { background-color: var(--arka-plan); color: white; font-family: 'Segoe UI', sans-serif; margin: 0; }
+        body { background-color: var(--arka-plan); color: white; font-family: 'Segoe UI', sans-serif; margin: 0; overflow-x: hidden; }
 
         /* Navigasyon */
-        nav { display: flex; justify-content: space-around; align-items: center; padding: 20px 0; background: rgba(11, 15, 25, 0.9); border-bottom: 1px solid #1e293b; }
-        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: 500; }
+        nav { display: flex; justify-content: space-around; align-items: center; padding: 20px 0; background: rgba(11, 15, 25, 0.95); border-bottom: 1px solid #1e293b; position: sticky; top: 0; z-index: 1000; }
+        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: 500; transition: 0.3s; }
         nav a:hover { color: var(--ana-mavi); }
         .logo { font-size: 24px; font-weight: bold; color: var(--ana-mavi); text-decoration:none; }
 
@@ -28,7 +28,7 @@
             margin: 60px auto;
             padding: 0 20px;
             display: flex;
-            gap: 20px;
+            gap: 25px;
         }
 
         /* Sol Vurgu Alanı */
@@ -40,6 +40,7 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
+            box-shadow: 0 10px 30px rgba(0, 210, 255, 0.2);
         }
 
         .vurgu-alani h2 { font-size: 2rem; margin-bottom: 15px; line-height: 1.2; color: white; }
@@ -49,26 +50,45 @@
         .hizmet-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
+            gap: 20px;
             flex-grow: 1;
         }
 
+        /* --- KART TASARIMI VE HOVER EFEKTLERİ --- */
         .hizmet-kart {
             background: var(--kart-renk);
             border-radius: 15px;
             padding: 25px;
-            transition: 0.3s;
             display: flex;
             flex-direction: column;
+            border: 1px solid transparent;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-decoration: none; /* Link özelliğini temizle */
         }
 
-        .hizmet-kart:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+        .hizmet-kart:hover {
+            transform: translateY(-12px) scale(1.02);
+            border-color: var(--ana-mavi);
+            box-shadow: 0 20px 40px rgba(0, 210, 255, 0.2);
+            cursor: pointer;
+        }
 
-        .hizmet-kart .ikon { font-size: 28px; margin-bottom: 15px; }
-        .hizmet-kart h3 { color: var(--yazi-koyu); font-size: 1rem; margin: 0 0 10px 0; text-transform: uppercase; letter-spacing: 0.5px; }
-        .hizmet-kart p { color: var(--yazi-gri); font-size: 0.85rem; margin-bottom: 15px; line-height: 1.4; flex-grow: 1; }
-        .hizmet-kart .detay-link { color: var(--ana-mavi); text-decoration: none; font-size: 0.8rem; font-weight: bold; }
+        .hizmet-kart .ikon { 
+            font-size: 32px; 
+            margin-bottom: 15px; 
+            display: inline-block;
+            transition: 0.3s;
+        }
 
+        .hizmet-kart:hover .ikon {
+            transform: rotate(10deg) scale(1.2);
+        }
+
+        .hizmet-kart h3 { color: var(--yazi-koyu); font-size: 1.1rem; margin: 0 0 10px 0; font-weight: 700; }
+        .hizmet-kart p { color: var(--yazi-gri); font-size: 0.9rem; margin-bottom: 15px; line-height: 1.5; flex-grow: 1; }
+        .hizmet-kart .bilgi-al { color: var(--ana-mavi); font-size: 0.85rem; font-weight: bold; }
+
+        /* Mobil Uyumluluk */
         @media (max-width: 1024px) {
             .hizmet-bolumu { flex-direction: column; }
             .vurgu-alani { flex: none; height: 250px; }
@@ -77,31 +97,7 @@
         @media (max-width: 600px) {
             .hizmet-grid { grid-template-columns: 1fr; }
         }
-    </style>/* 1. Eski .hizmet-kart kısmını bul ve bununla değiştir */
-        .hizmet-kart {
-            background: var(--kart-renk);
-            border-radius: 15px;
-            padding: 25px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            display: flex;
-            flex-direction: column;
-            border: 1px solid transparent;
-        }
-
-        /* 2. Eski .hizmet-kart:hover kısmını bul ve bununla değiştir */
-        .hizmet-kart:hover {
-            transform: translateY(-12px) scale(1.02);
-            border-color: var(--ana-mavi);
-            box-shadow: 0 20px 40px rgba(0, 210, 255, 0.2);
-            cursor: pointer;
-        }
-
-        /* 3. İkon efekti için bunu da hemen altına ekleyebilirsin */
-        .hizmet-kart:hover .ikon {
-            transform: rotate(10deg) scale(1.2);
-            transition: 0.3s;
-            display: inline-block;
-        }
+    </style>
 </head>
 <body>
 
@@ -118,65 +114,65 @@
     <div class="hizmet-bolumu">
         <div class="vurgu-alani">
             <h2>Uçtan Uca Dijital ve Teknik Çözümler</h2>
-            <p>Yazılımdan donanıma, stratejiden güvenliğe kadar tüm ihtiyaçlarınız için profesyonel destek.</p>
-            <a href="iletisim.html" style="background:white; color:#1e293b; padding:12px 20px; border-radius:30px; text-decoration:none; text-align:center; font-size:0.9rem; font-weight:bold;">Bize Ulaşın</a>
+            <p>Yazılımdan donanıma, tüm teknolojik ihtiyaçlarınız profesyonel ellerde.</p>
+            <a href="iletisim.html" style="background:white; color:#1e293b; padding:12px 25px; border-radius:30px; text-decoration:none; text-align:center; font-size:0.9rem; font-weight:bold; transition:0.3s;">Bize Ulaşın</a>
         </div>
 
         <div class="hizmet-grid">
             <div class="hizmet-kart">
-                <div class="ikon">💻</div>
-                <h3>Web Tasarım</h3>
-                <p>Kullanıcı deneyimi odaklı, modern ve hızlı web arayüzleri geliştiriyoruz.</p>
-                <a href="iletisim.html" class="detay-link">Bilgi Al →</a>
+                <span class="ikon">💻</span>
+                <h3>WEB TASARIM</h3>
+                <p>Kullanıcı odaklı, modern ve hızlı web arayüzleri.</p>
+                <span class="bilgi-al">Bilgi Al →</span>
             </div>
 
             <div class="hizmet-kart">
-                <div class="ikon">📱</div>
-                <h3>Sosyal Medya Yönetimi</h3>
-                <p>Markanızın dijital sesini güçlendiriyor, etkileşimi zirveye taşıyoruz.</p>
-                <a href="iletisim.html" class="detay-link">Bilgi Al →</a>
+                <span class="ikon">📱</span>
+                <h3>SOSYAL MEDYA</h3>
+                <p>Markanızın dijital sesini güçlendiren stratejiler.</p>
+                <span class="bilgi-al">Bilgi Al →</span>
             </div>
 
             <div class="hizmet-kart">
-                <div class="ikon">🎴</div>
-                <h3>Dijital Kartvizit</h3>
-                <p>Temassız ve çevre dostu yeni nesil profesyonel tanışma çözümleri.</p>
-                <a href="iletisim.html" class="detay-link">Bilgi Al →</a>
+                <span class="ikon">🎴</span>
+                <h3>DİJİTAL KARTVİZİT</h3>
+                <p>Yeni nesil profesyonel tanışma çözümleri.</p>
+                <span class="bilgi-al">Bilgi Al →</span>
             </div>
 
             <div class="hizmet-kart">
-                <div class="ikon">⚙️</div>
-                <h3>IT Hizmeti</h3>
-                <p>Kurumsal altyapı yönetimi ve kesintisiz operasyon desteği sağlıyoruz.</p>
-                <a href="iletisim.html" class="detay-link">Bilgi Al →</a>
+                <span class="ikon">⚙️</span>
+                <h3>IT HİZMETİ</h3>
+                <p>Kurumsal altyapı ve kesintisiz operasyon desteği.</p>
+                <span class="bilgi-al">Bilgi Al →</span>
             </div>
 
             <div class="hizmet-kart">
-                <div class="ikon">🛠️</div>
-                <h3>Teknik Servis</h3>
-                <p>Bilgisayar ve cep telefonu cihazlarınız için uzman onarım hizmeti.</p>
-                <a href="iletisim.html" class="detay-link">Bilgi Al →</a>
+                <span class="ikon">🛠️</span>
+                <h3>TEKNİK SERVİS</h3>
+                <p>Bilgisayar ve telefonlarınız için profesyonel onarım.</p>
+                <span class="bilgi-al">Bilgi Al →</span>
             </div>
 
             <div class="hizmet-kart">
-                <div class="ikon">🚀</div>
-                <h3>Mobil Uygulama</h3>
-                <p>Fikirlerinizi iOS ve Android platformlarında çalışan ürünlere dönüştürüyoruz.</p>
-                <a href="iletisim.html" class="detay-link">Bilgi Al →</a>
+                <span class="ikon">🚀</span>
+                <h3>MOBİL UYGULAMA</h3>
+                <p>iOS ve Android platformları için özel yazılımlar.</p>
+                <span class="bilgi-al">Bilgi Al →</span>
             </div>
 
             <div class="hizmet-kart">
-                <div class="ikon">🔒</div>
-                <h3>Siber Güvenlik</h3>
-                <p>Verilerinizi ve dijital varlıklarınızı siber tehditlere karşı koruyoruz.</p>
-                <a href="iletisim.html" class="detay-link">Bilgi Al →</a>
+                <span class="ikon">🔒</span>
+                <h3>SİBER GÜVENLİK</h3>
+                <p>Verilerinizi tehditlere karşı koruma altına alın.</p>
+                <span class="bilgi-al">Bilgi Al →</span>
             </div>
 
             <div class="hizmet-kart">
-                <div class="ikon">📈</div>
-                <h3>Veri Analizi</h3>
-                <p>Karmaşık verileri anlamlı raporlara dönüştürerek büyümenizi destekliyoruz.</p>
-                <a href="iletisim.html" class="detay-link">Bilgi Al →</a>
+                <span class="ikon">📈</span>
+                <h3>VERI ANALİZİ</h3>
+                <p>Verileri kazanca dönüştüren raporlama sistemleri.</p>
+                <span class="bilgi-al">Bilgi Al →</span>
             </div>
         </div>
     </div>
