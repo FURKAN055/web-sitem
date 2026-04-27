@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hizmetlerimiz - Teknoay Bilişim</title>
     <style>
-        /* TEMEL AYARLAR */
         :root {
             --arka-plan: #000000;
             --ana-pembe: #ff007f;
             --yazi-beyaz: #ffffff;
             --kart-arkaplan: #ffffff;
+            --gri-ton: #1a1a1a;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -18,81 +18,96 @@
         body { 
             background-color: var(--arka-plan); 
             color: var(--yazi-beyaz); 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            min-height: 100vh;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+            line-height: 1.5;
         }
 
-        /* NAVİGASYON */
+        /* NAVBAR */
         nav { 
             display: flex; 
             justify-content: space-between; 
             align-items: center; 
-            padding: 20px 5%; 
+            padding: 25px 8%; 
             background: #000; 
-            border-bottom: 1px solid #333;
+            border-bottom: 1px solid #222;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-        .logo { font-size: 24px; color: var(--ana-pembe); font-weight: bold; text-decoration: none; }
-        nav .menu a { color: white; text-decoration: none; margin-left: 20px; font-weight: 600; transition: 0.3s; }
+        .logo { font-size: 24px; color: var(--ana-pembe); font-weight: 800; text-decoration: none; letter-spacing: 1px; }
+        nav .menu a { color: white; text-decoration: none; margin-left: 30px; font-weight: 500; transition: 0.3s; font-size: 14px; text-transform: uppercase; }
         nav .menu a:hover { color: var(--ana-pembe); }
 
-        /* ANA KONTEYNER */
-        .main-content { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+        .container { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
 
-        /* ÜST BÖLÜM: BANNER VE KARTLAR */
-        .hero-section { display: flex; gap: 30px; margin-bottom: 80px; }
+        /* KURUMSAL HERO SECTION */
+        .hero-section { display: flex; gap: 30px; margin-bottom: 100px; align-items: stretch; }
         
-        .pink-banner { 
-            flex: 1;
-            background: linear-gradient(135deg, #ff007f 0%, #cc0066 100%); 
-            border-radius: 25px; 
-            padding: 50px; 
+        .main-banner { 
+            flex: 1.2;
+            background: #111; 
+            border-radius: 20px; 
+            padding: 60px; 
             display: flex; 
             flex-direction: column; 
             justify-content: center;
-            box-shadow: 0 15px 40px rgba(255, 0, 127, 0.3);
+            border: 1px solid #222;
+            position: relative;
+            overflow: hidden;
         }
-        .pink-banner h1 { font-size: 2.5rem; margin-bottom: 20px; color: white; line-height: 1.2; }
-        .pink-banner p { font-size: 1.1rem; margin-bottom: 30px; opacity: 0.9; }
-        .btn-call { background: white; color: black; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; width: fit-content; transition: 0.3s; }
-        .btn-call:hover { transform: scale(1.05); }
+        .main-banner::before {
+            content: ""; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--ana-pembe);
+        }
+        .main-banner h1 { font-size: 2.5rem; margin-bottom: 20px; font-weight: 700; color: white; }
+        .main-banner p { font-size: 1.1rem; color: #aaa; margin-bottom: 35px; max-width: 500px; }
+        .btn-kurumsal { background: var(--ana-pembe); color: white; padding: 16px 35px; border-radius: 4px; text-decoration: none; font-weight: 600; width: fit-content; transition: 0.3s; }
+        .btn-kurumsal:hover { background: #d6006b; transform: translateY(-2px); }
 
-        .services-grid { flex: 1.5; display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-        .service-card { background: var(--kart-arkaplan); color: black; padding: 30px; border-radius: 20px; text-decoration: none; transition: 0.4s; border: 2px solid transparent; }
-        .service-card:hover { transform: translateY(-10px); border-color: var(--ana-pembe); }
-        .service-card h3 { margin: 10px 0; font-size: 1.3rem; color: #000; }
-        .service-card p { color: #555; font-size: 0.9rem; }
+        .services-grid { flex: 1.8; display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .service-card { background: var(--kart-arkaplan); color: black; padding: 35px; border-radius: 12px; text-decoration: none; transition: 0.3s; display: flex; flex-direction: column; justify-content: space-between; }
+        .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(255, 0, 127, 0.15); }
+        .service-card h3 { margin-bottom: 15px; font-size: 1.25rem; font-weight: 700; color: #000; }
+        .service-card p { color: #666; font-size: 0.9rem; line-height: 1.6; }
 
-        /* NEDEN BİZ BÖLÜMÜ */
-        .why-us-wrap { background: #0a0a0a; padding: 80px 0; border-top: 1px solid #222; border-bottom: 1px solid #222; margin-top: 50px; }
-        .why-us-flex { display: flex; max-width: 1200px; margin: 0 auto; padding: 0 20px; gap: 60px; align-items: center; }
-        .why-us-text { flex: 1.5; }
-        .why-us-text h2 { font-size: 2.8rem; color: var(--ana-pembe); margin-bottom: 25px; }
-        .why-us-text p { font-size: 1.1rem; color: #ccc; margin-bottom: 15px; line-height: 1.8; }
+        /* NEDEN BİZ (KURUMSAL DİZİLİM) */
+        .why-us-section { background: #050505; padding: 120px 0; border-top: 1px solid #1a1a1a; }
+        .why-us-flex { display: flex; max-width: 1200px; margin: 0 auto; padding: 0 20px; gap: 80px; align-items: flex-start; }
         
-        .stats-column { flex: 1; display: flex; flex-direction: column; gap: 20px; }
-        .stat-box { background: #111; padding: 25px; border-radius: 15px; text-align: center; border-left: 5px solid var(--ana-pembe); }
-        .stat-box h3 { font-size: 2.5rem; color: var(--ana-pembe); margin: 0; }
-        .stat-box p { font-size: 0.9rem; color: white; opacity: 0.8; text-transform: uppercase; }
+        .why-us-text { flex: 1.5; }
+        .why-us-text h2 { font-size: 2.5rem; color: white; margin-bottom: 30px; font-weight: 800; }
+        .why-us-text h2 span { color: var(--ana-pembe); }
+        .why-us-text p { font-size: 1.05rem; color: #999; margin-bottom: 25px; line-height: 1.8; }
+        .quote-box { border-left: 3px solid var(--ana-pembe); padding-left: 25px; margin-top: 40px; color: white; font-weight: 500; font-size: 1.2rem; }
+
+        .stats-grid { flex: 1; display: grid; gap: 20px; }
+        .stat-item { 
+            background: #0f0f0f; 
+            padding: 30px; 
+            border-radius: 8px; 
+            border: 1px solid #222;
+            transition: 0.3s;
+        }
+        .stat-item:hover { border-color: var(--ana-pembe); }
+        .stat-item h4 { font-size: 2.2rem; color: var(--ana-pembe); margin-bottom: 5px; font-weight: 800; }
+        .stat-item span { font-size: 0.8rem; color: #666; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 600; }
 
         /* FOOTER */
-        footer { background: #000; border-top: 2px solid var(--ana-pembe); padding: 50px 0; margin-top: 50px; }
-        .footer-content { display: grid; grid-template-columns: repeat(3, 1fr); max-width: 1200px; margin: 0 auto; padding: 0 20px; gap: 40px; }
-        .footer-box h4 { color: var(--ana-pembe); margin-bottom: 20px; }
-        .footer-box p, .footer-box a { color: #aaa; text-decoration: none; margin-bottom: 10px; display: block; font-size: 0.9rem; }
+        footer { background: #000; border-top: 1px solid #222; padding: 80px 0 40px; }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1.2fr; gap: 80px; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .footer-box h5 { color: white; margin-bottom: 25px; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+        .footer-box p, .footer-box a { color: #666; text-decoration: none; margin-bottom: 12px; display: block; font-size: 0.9rem; transition: 0.2s; }
+        .footer-box a:hover { color: var(--ana-pembe); }
 
-        /* WHATSAPP BUTONU */
+        /* WHATSAPP */
         .whatsapp-fixed { 
-            position: fixed; bottom: 30px; right: 30px; background: #25d366; 
-            width: 60px; height: 60px; border-radius: 50%; display: flex; 
-            align-items: center; justify-content: center; z-index: 9999;
-            border: 2px solid white; box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            position: fixed; bottom: 30px; right: 30px; background: #25d366; width: 60px; height: 60px; 
+            border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000;
         }
 
-        /* MOBİL UYUMLULUK */
-        @media (max-width: 900px) {
-            .hero-section, .why-us-flex, .footer-content { flex-direction: column; grid-template-columns: 1fr; text-align: center; }
+        @media (max-width: 1000px) {
+            .hero-section, .why-us-flex, .footer-grid { flex-direction: column; grid-template-columns: 1fr; gap: 40px; }
             .services-grid { grid-template-columns: 1fr; }
-            .btn-call { margin: 0 auto; }
+            .main-banner { padding: 40px 30px; }
         }
     </style>
 </head>
@@ -103,68 +118,48 @@
         <div class="menu">
             <a href="index.html">Ana Sayfa</a>
             <a href="hakkimda.html">Hakkımda</a>
-            <a href="hizmetler.html">Hizmetler</a>
+            <a href="hizmetler.html" style="color: var(--ana-pembe);">Hizmetler</a>
             <a href="iletisim.html">İletişim</a>
         </div>
     </nav>
 
-    <div class="main-content">
+    <div class="container">
         <div class="hero-section">
-            <div class="pink-banner">
-                <h1>Pembe Gücüyle Dijital Dönüşüm</h1>
-                <p>Siyahın asalti ve pembenin enerjisiyle teknolojiyi yeniden yorumluyoruz.</p>
-                <a href="iletisim.html" class="btn-call">Bize Ulaşın</a>
+            <div class="main-banner">
+                <h1>Stratejik Teknoloji Çözümleri</h1>
+                <p>İşletmenizin dijital altyapısını modernize ediyor, kurumsal süreçlerinize profesyonel değer katıyoruz.</p>
+                <a href="iletisim.html" class="btn-kurumsal">Çözümlerimizi İnceleyin</a>
             </div>
 
             <div class="services-grid">
-                <a href="iletisim.html" class="service-card"><h3>💻 Web Tasarım</h3><p>Kullanıcı odaklı, modern ve pembe detaylı siteler.</p></a>
-                <a href="iletisim.html" class="service-card"><h3>📱 Sosyal Medya</h3><p>Dijital görünürlüğünüzü profesyonelce yönetiyoruz.</p></a>
-                <a href="iletisim.html" class="service-card"><h3>⚙️ IT Hizmeti</h3><p>Donanım ve yazılım süreçlerinde tam kontrol.</p></a>
-                <a href="iletisim.html" class="service-card"><h3>🛡️ Siber Güvenlik</h3><p>Verilerinizi pembe bir kalkanla koruyoruz.</p></a>
+                <a href="iletisim.html" class="service-card">
+                    <h3>Kurumsal Web Sistemleri</h3>
+                    <p>Yüksek performanslı, güvenli ve marka kimliğinizle tam uyumlu web teknolojileri geliştiriyoruz.</p>
+                </a>
+                <a href="iletisim.html" class="service-card">
+                    <h3>Dijital Pazarlama Yönetimi</h3>
+                    <p>Veri odaklı stratejilerle markanızın dijital dünyadaki pazar payını ve etkileşimini artırıyoruz.</p>
+                </a>
+                <a href="iletisim.html" class="service-card">
+                    <h3>IT Altyapı ve Danışmanlık</h3>
+                    <p>Kurumsal ağ yönetimi ve sistem güvenliği süreçlerinizi profesyonel standartlarda yönetiyoruz.</p>
+                </a>
+                <a href="iletisim.html" class="service-card">
+                    <h3>Teknik Destek ve Onarım</h3>
+                    <p>Donanım ihtiyaçlarınız için sürdürülebilir ve hızlı teknik çözüm süreçleri sağlıyoruz.</p>
+                </a>
             </div>
         </div>
     </div>
 
-    <section class="why-us-wrap">
+    <section class="why-us-section">
         <div class="why-us-flex">
             <div class="why-us-text">
-                <h2>Neden Biz?</h2>
-                <p>Biz, sadece hizmet sunan bir ekip değil; işinizi büyütmeye odaklanan stratejik bir çözüm ortağıyız. 2020'den bu yana her projeye özel çözümler geliştiriyoruz.</p>
-                <p>Kalıplar yerine markanıza uygun sonuç odaklı çalışmalar sunarak zaman ve maliyet avantajı yaratıyoruz.</p>
+                <h2>Neden <span>Teknoay Bilişim?</span></h2>
+                <p>Dijital dünyada doğru iş ortağını seçmek, sürdürülebilir başarının temelidir. Biz, sadece hizmet sunan bir ekip değil; işinizi büyütmeye odaklanan stratejik bir çözüm ortağıyız.</p>
+                <p>2020 yılından bu yana edindiğimiz tecrübeyle, sektörel dinamiklere uygun, yenilikçi ve sonuç odaklı mühendislik çözümleri sunuyoruz.</p>
+                <div class="quote-box">"İşinizi kendi işimiz gibi sahipleniyor, teknoloji ile değer katıyoruz."</div>
             </div>
             
-            <div class="stats-column">
-                <div class="stat-box"><h3>10+</h3><p>Yıllık Deneyim</p></div>
-                <div class="stat-box"><h3>500+</h3><p>Başarılı Proje</p></div>
-                <div class="stat-box"><h3>%100</h3><p>Memnuniyet</p></div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-box">
-                <h4>TEKNOAY BİLİŞİM</h4>
-                <p>Teknoloji ve stratejiyi birleştirerek dijital dönüşüme liderlik ediyoruz.</p>
-            </div>
-            <div class="footer-box">
-                <h4>Hızlı Menü</h4>
-                <a href="index.html">Ana Sayfa</a>
-                <a href="hakkimda.html">Hakkımda</a>
-                <a href="iletisim.html">İletişim</a>
-            </div>
-            <div class="footer-box">
-                <h4>İletişim</h4>
-                <p>📍 Üniversite Mah Cami Sok No : 6 AVCILAR</p>
-                <p>📧 info@teknoaybilisim.com</p>
-                <p>📞 +90 530 044 81 79</p>
-            </div>
-        </div>
-    </footer>
-
-    <a href="https://wa.me/905300448179" class="whatsapp-fixed" target="_blank">
-        <svg viewBox="0 0 32 32" style="width:30px; fill:white;"><path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.733 5.476 2.017 7.783l-2.017 7.371 7.54-1.981c2.247 1.213 4.83 1.903 7.577 1.903 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.333c-2.453 0-4.757-0.613-6.779-1.688l-0.485-0.259-4.485 1.177 1.201-4.388-0.285-0.453c-1.144-1.815-1.811-3.968-1.811-6.273 0-6.617 5.383-12 12-12s12 5.383 12 12-5.383 12-12 12zM21.904 18.067c-0.325-0.163-1.921-0.947-2.22-1.056s-0.517-0.163-0.733 0.163-0.833 1.056-1.023 1.272-0.379 0.244-0.704 0.081c-0.325-0.163-1.373-0.507-2.616-1.616-0.967-0.863-1.62-1.928-1.809-2.253s-0.020-0.501 0.143-0.663c0.147-0.145 0.325-0.379 0.488-0.569s0.217-0.325 0.325-0.541 0.054-0.407-0.027-0.569c-0.081-0.163-0.733-1.765-1.004-2.417s-0.531-0.541-0.733-0.551c-0.191-0.010-0.411-0.011-0.631-0.011s-0.579 0.081-0.881 0.415c-0.301 0.333-1.152 1.127-1.152 2.747s1.179 3.181 1.341 3.4c0.163 0.22 2.321 3.543 5.623 4.968 0.785 0.339 1.397 0.541 1.873 0.693 0.788 0.251 1.505 0.215 2.072 0.131 0.632-0.093 1.921-0.785 2.192-1.543s0.271-1.409 0.191-1.543c-0.081-0.135-0.299-0.216-0.624-0.379z"></path></svg>
-    </a>
-
-</body>
-</html>
+            <div class="stats-grid">
+                <div class="
