@@ -22,7 +22,7 @@
         nav a:hover { color: var(--ana-mavi); }
         .logo { font-size: 24px; font-weight: bold; color: var(--ana-mavi); text-decoration:none; }
 
-        /* Hizmetler Konteynırı */
+        /* Hizmetler Bölümü Ana Konteyner */
         .hizmet-bolumu {
             max-width: 1200px;
             margin: 60px auto;
@@ -31,7 +31,7 @@
             gap: 25px;
         }
 
-        /* Sol Vurgu Alanı */
+        /* Sol Taraftaki Büyük Vurgu Kartı */
         .vurgu-alani {
             flex: 0 0 320px;
             background: var(--vurgu-gradyan);
@@ -46,7 +46,7 @@
         .vurgu-alani h2 { font-size: 2rem; margin-bottom: 15px; line-height: 1.2; color: white; }
         .vurgu-alani p { font-size: 1rem; opacity: 0.95; margin-bottom: 25px; color: white; font-weight: 500; }
 
-        /* Sağ Grid */
+        /* Sağ Taraftaki 8'li Izgara */
         .hizmet-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -54,7 +54,7 @@
             flex-grow: 1;
         }
 
-        /* KART TASARIMI VE HOVER EFEKTLERİ */
+        /* Kartların Tasarımı */
         .hizmet-kart {
             background: var(--kart-renk);
             border-radius: 15px;
@@ -64,22 +64,24 @@
             border: 1px solid transparent;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             text-decoration: none;
+            cursor: pointer;
         }
 
+        /* Kart Hover (Fare Üstüne Gelince) Efekti */
         .hizmet-kart:hover {
             transform: translateY(-12px) scale(1.02);
             border-color: var(--ana-mavi);
             box-shadow: 0 20px 40px rgba(0, 210, 255, 0.2);
-            cursor: pointer;
         }
 
-        .hizmet-kart .ikon { font-size: 32px; margin-bottom: 15px; transition: 0.3s; }
+        .hizmet-kart .ikon { font-size: 32px; margin-bottom: 15px; transition: 0.3s; display: block; }
         .hizmet-kart:hover .ikon { transform: rotate(10deg) scale(1.2); }
-        .hizmet-kart h3 { color: var(--yazi-koyu); font-size: 1.15rem; margin: 0 0 12px 0; font-weight: 800; }
-        .hizmet-kart p { color: var(--yazi-gri); font-size: 0.98rem; margin-bottom: 15px; line-height: 1.6; flex-grow: 1; font-weight: 500; }
+
+        .hizmet-kart h3 { color: var(--yazi-koyu); font-size: 1.1rem; margin: 0 0 12px 0; font-weight: 800; text-transform: uppercase; }
+        .hizmet-kart p { color: var(--yazi-gri); font-size: 0.95rem; margin-bottom: 15px; line-height: 1.6; flex-grow: 1; font-weight: 500; }
         .hizmet-kart .bilgi-al { color: var(--ana-mavi); font-size: 0.9rem; font-weight: 700; }
 
-        /* FOOTER TASARIMI */
+        /* Footer Tasarımı */
         footer { background-color: #050812; padding: 60px 0 20px 0; border-top: 1px solid #1e293b; margin-top: 100px; }
         .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1.5fr; gap: 50px; padding: 0 20px; }
         .footer-box h4 { color: var(--ana-mavi); font-size: 1.2rem; margin-bottom: 20px; text-transform: uppercase; }
@@ -87,11 +89,15 @@
         .footer-box a:hover { color: var(--ana-mavi); padding-left: 5px; }
         .copyright { text-align: center; margin-top: 50px; padding-top: 20px; border-top: 1px solid #1e293b; color: #64748b; font-size: 0.85rem; }
 
+        /* Mobil Uyumluluk */
         @media (max-width: 1024px) {
             .hizmet-bolumu { flex-direction: column; }
-            .vurgu-alani { flex: none; height: 250px; }
+            .vurgu-alani { flex: none; height: auto; margin-bottom: 20px; }
             .hizmet-grid { grid-template-columns: repeat(2, 1fr); }
             .footer-container { grid-template-columns: 1fr; text-align: center; }
+        }
+        @media (max-width: 600px) {
+            .hizmet-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -100,4 +106,94 @@
     <nav>
         <a href="index.html" class="logo">FURKAN</a>
         <div>
-            <a href="index.html
+            <a href="index.html">Ana Sayfa</a>
+            <a href="hakkimda.html">Hakkımda</a>
+            <a href="hizmetler.html" style="color: var(--ana-mavi);">Hizmetler</a>
+            <a href="iletisim.html">İletişim</a>
+        </div>
+    </nav>
+
+    <div class="hizmet-bolumu">
+        <div class="vurgu-alani">
+            <h2>Uçtan Uca Dijital Çözümler</h2>
+            <p>Teknoloji ve donanım ihtiyaçlarınız için profesyonel destek burada.</p>
+            <a href="iletisim.html" style="background:white; color:#1e293b; padding:12px 25px; border-radius:30px; text-decoration:none; text-align:center; font-size:0.9rem; font-weight:bold;">Bize Ulaşın</a>
+        </div>
+
+        <div class="hizmet-grid">
+            <div class="hizmet-kart" onclick="location.href='iletisim.html'">
+                <span class="ikon">💻</span>
+                <h3>Web Tasarım</h3>
+                <p>Kullanıcı dostu, hızlı ve modern web arayüzleri geliştiriyoruz.</p>
+                <span class="bilgi-al">Bilgi Al →</span>
+            </div>
+            <div class="hizmet-kart" onclick="location.href='iletisim.html'">
+                <span class="ikon">📱</span>
+                <h3>Sosyal Medya</h3>
+                <p>Markanızın dijital dünyadaki görünürlüğünü profesyonelce yönetiyoruz.</p>
+                <span class="bilgi-al">Bilgi Al →</span>
+            </div>
+            <div class="hizmet-kart" onclick="location.href='iletisim.html'">
+                <span class="ikon">🎴</span>
+                <h3>Dijital Kartvizit</h3>
+                <p>Yeni nesil, çevre dostu ve profesyonel iletişim çözümü.</p>
+                <span class="bilgi-al">Bilgi Al →</span>
+            </div>
+            <div class="hizmet-kart" onclick="location.href='iletisim.html'">
+                <span class="ikon">⚙️</span>
+                <h3>IT Hizmeti</h3>
+                <p>Sistem yönetimi ve altyapı projelerinizde tam destek.</p>
+                <span class="bilgi-al">Bilgi Al →</span>
+            </div>
+            <div class="hizmet-kart" onclick="location.href='iletisim.html'">
+                <span class="ikon">🛠️</span>
+                <h3>Teknik Servis</h3>
+                <p>Bilgisayar ve telefonlarınız için uzman teknik onarım hizmeti.</p>
+                <span class="bilgi-al">Bilgi Al →</span>
+            </div>
+            <div class="hizmet-kart" onclick="location.href='iletisim.html'">
+                <span class="ikon">🚀</span>
+                <h3>Mobil Uygulama</h3>
+                <p>iOS ve Android için özel yazılım ve uygulama geliştirme.</p>
+                <span class="bilgi-al">Bilgi Al →</span>
+            </div>
+            <div class="hizmet-kart" onclick="location.href='iletisim.html'">
+                <span class="ikon">🔒</span>
+                <h3>Siber Güvenlik</h3>
+                <p>Dijital varlıklarınızı siber tehditlere karşı koruma altına alın.</p>
+                <span class="bilgi-al">Bilgi Al →</span>
+            </div>
+            <div class="hizmet-kart" onclick="location.href='iletisim.html'">
+                <span class="ikon">📈</span>
+                <h3>Veri Analizi</h3>
+                <p>Verilerinizi stratejik kararlar için anlamlı raporlara dönüştürün.</p>
+                <span class="bilgi-al">Bilgi Al →</span>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-box">
+                <div class="logo" style="margin-bottom: 15px;">FURKAN</div>
+                <p>Teknoloji ve stratejiyi birleştirerek markaların dijital dönüşüm süreçlerine liderlik ediyoruz.</p>
+            </div>
+            <div class="footer-box">
+                <h4>Hızlı Menü</h4>
+                <a href="index.html">Ana Sayfa</a>
+                <a href="hakkimda.html">Hakkımda</a>
+                <a href="hizmetler.html">Hizmetler</a>
+                <a href="iletisim.html">İletişim</a>
+            </div>
+            <div class="footer-box">
+                <h4>İletişim</h4>
+                <p>📍 İstanbul, Türkiye</p>
+                <p>📧 info@furkan055.com</p>
+                <p>📞 +90 5XX XXX XX XX</p>
+            </div>
+        </div>
+        <div class="copyright">© 2026 Furkan Dijital Çözümler. Tüm Hakları Saklıdır.</div>
+    </footer>
+
+</body>
+</html>
