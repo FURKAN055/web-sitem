@@ -3,32 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Furkan'ın Dünyası</title>
+    <title>Furkan - Dijital Çözümler</title>
     <style>
+        /* Temel Renkler ve Font */
+        :root {
+            --arka-plan: #0b0f19;
+            --kart-renk: #161b28;
+            --ana-mavi: #00d2ff;
+            --yazi-beyaz: #ffffff;
+            --yazi-gri: #94a3b8;
+        }
+
         body {
-            background-color: #0f172a;
-            color: white;
-            font-family: sans-serif;
+            background-color: var(--arka-plan);
+            color: var(--yazi-beyaz);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Navigasyon Menüsü */
+        nav {
             display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 20px 0;
+            background: rgba(11, 15, 25, 0.9);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .logo { font-size: 24px; font-weight: bold; color: var(--ana-mavi); }
+
+        nav a {
+            color: var(--yazi-beyaz);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: var(--ana-mavi); }
+
+        /* Ana Giriş Bölümü (Hero) */
+        .hero {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .kart {
-            background-color: #1e293b;
-            padding: 50px;
-            border-radius: 20px;
-            border: 2px solid #38bdf8;
             text-align: center;
+            padding: 0 20px;
         }
-        h1 { color: #38bdf8; }
+
+        .hero h1 { font-size: 3.5rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; color: var(--yazi-gri); max-width: 600px; }
+
+        .buton {
+            margin-top: 30px;
+            padding: 15px 40px;
+            background: var(--ana-mavi);
+            color: #000;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .buton:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(0, 210, 255, 0.4); }
+
     </style>
 </head>
 <body>
-    <div class="kart">
-        <h1>RESMEN YAYINDAYIZ! 🚀</h1>
-        <p>Furkan bu işi çözdü. İlk web sitemiz hayırlı olsun.</p>
+
+    <nav>
+        <div class="logo">FURKAN</div>
+        <div>
+            <a href="index.html">Ana Sayfa</a>
+            <a href="hakkimda.html">Hakkımda</a>
+            <a href="hizmetler.html">Hizmetler</a>
+            <a href="iletisim.html">İletişim</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>Geleceği Dijitalde <span style="color: var(--ana-mavi);">İnşa Ediyoruz</span></h1>
+        <p>BossyDigital tarzında modern, hızlı ve sonuç odaklı çözümlerle projelerinizi bir üst seviyeye taşıyın.</p>
+        <a href="hizmetler.html" class="buton">Hizmetleri Keşfet</a>
     </div>
+
 </body>
 </html>
