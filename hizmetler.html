@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hizmetlerimiz - Furkan Dijital</title>
+    <title>Hizmetlerimiz - Teknoay Bilişim</title>
     <style>
         :root {
             --arka-plan: #000000;
@@ -43,8 +43,8 @@
             box-shadow: 0 10px 30px rgba(255, 0, 127, 0.3);
         }
 
-        .vurgu-alani h2 { font-size: 2rem; margin-bottom: 15px; color: white; }
-        .vurgu-alani p { font-size: 1rem; color: white; margin-bottom: 25px; font-weight: 500; }
+        .vurgu-alani h2 { font-size: 2rem; margin-bottom: 15px; color: white; line-height: 1.2; }
+        .vurgu-alani p { font-size: 1rem; color: white; margin-bottom: 25px; font-weight: 500; opacity: 0.9; }
 
         /* Sağ Grid */
         .hizmet-grid {
@@ -75,118 +75,16 @@
         .hizmet-kart .ikon { font-size: 32px; margin-bottom: 15px; display: block; filter: grayscale(100%); transition: 0.3s; }
         .hizmet-kart:hover .ikon { filter: grayscale(0%); transform: scale(1.2); }
 
-        .hizmet-kart h3 { color: var(--yazi-koyu); font-size: 1.1rem; margin: 0 0 12px 0; font-weight: 800; }
+        .hizmet-kart h3 { color: var(--yazi-koyu); font-size: 1.1rem; margin: 0 0 12px 0; font-weight: 800; text-transform: uppercase; }
         .hizmet-kart p { color: var(--yazi-gri); font-size: 0.95rem; margin-bottom: 15px; line-height: 1.6; font-weight: 500; flex-grow: 1; }
         .hizmet-kart .bilgi-al { color: var(--ana-pembe); font-size: 0.9rem; font-weight: 700; }
 
         /* Footer */
-        footer { background-color: #000000; padding: 60px 0 20px 0; border-top: 1px solid var(--ana-pembe); margin-top: 100px; }
+        footer { background-color: #000000; padding: 60px 0 20px 0; border-top: 2px solid var(--ana-pembe); margin-top: 100px; }
         .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1.5fr; gap: 50px; padding: 0 20px; }
-        .footer-box h4 { color: var(--ana-pembe); font-size: 1.2rem; margin-bottom: 20px; }
-        .footer-box p, .footer-box a { color: #ffffff; text-decoration: none; font-size: 0.95rem; margin-bottom: 10px; display: block; opacity: 0.8; transition: 0.3s; }
+        .footer-box h4 { color: var(--ana-pembe); font-size: 1.2rem; margin-bottom: 20px; text-transform: uppercase; }
+        .footer-box p, .footer-box a { color: #ffffff; text-decoration: none; font-size: 0.95rem; margin-bottom: 12px; display: block; opacity: 0.9; transition: 0.3s; }
         .footer-box a:hover { color: var(--ana-pembe); opacity: 1; }
         .copyright { text-align: center; margin-top: 50px; padding-top: 20px; border-top: 1px solid #333; color: #ffffff; opacity: 0.5; font-size: 0.85rem; }
 
-        @media (max-width: 1024px) {
-            .hizmet-bolumu { flex-direction: column; }
-            .vurgu-alani { flex: none; height: auto; }
-            .hizmet-grid { grid-template-columns: repeat(2, 1fr); }
-            .footer-container { grid-template-columns: 1fr; text-align: center; }
-        }
-        @media (max-width: 600px) { .hizmet-grid { grid-template-columns: 1fr; } }
-    </style>
-</head>
-<body>
-
-    <nav>
-        <a href="index.html" class="logo">FURKAN</a>
-        <div>
-            <a href="index.html">Ana Sayfa</a>
-            <a href="hakkimda.html">Hakkımda</a>
-            <a href="hizmetler.html" style="color: var(--ana-pembe);">Hizmetler</a>
-            <a href="iletisim.html">İletişim</a>
-        </div>
-    </nav>
-
-    <div class="hizmet-bolumu">
-        <div class="vurgu-alani">
-            <h2>Pembe Gücüyle Dijital Dönüşüm</h2>
-            <p>Siyahın asaleti ve pembenin enerjisiyle teknolojiyi yeniden yorumluyoruz.</p>
-            <a href="iletisim.html" style="background:white; color:black; padding:12px 25px; border-radius:30px; text-decoration:none; text-align:center; font-weight:bold;">Bize Ulaşın</a>
-        </div>
-
-        <div class="hizmet-grid">
-            <div class="hizmet-kart" onclick="location.href='iletisim.html'">
-                <span class="ikon">💻</span>
-                <h3>Web Tasarım</h3>
-                <p>Kullanıcı odaklı, pembe detaylarla canlandırılmış modern web siteleri.</p>
-                <span class="bilgi-al">Bilgi Al →</span>
-            </div>
-            <div class="hizmet-kart" onclick="location.href='iletisim.html'">
-                <span class="ikon">📱</span>
-                <h3>Sosyal Medya</h3>
-                <p>Markanızın profilini dijital dünyada parlatıyoruz.</p>
-                <span class="bilgi-al">Bilgi Al →</span>
-            </div>
-            <div class="hizmet-kart" onclick="location.href='iletisim.html'">
-                <span class="ikon">🎴</span>
-                <h3>Dijital Kartvizit</h3>
-                <p>Yeni nesil ve akılda kalıcı iletişim çözümleri.</p>
-                <span class="bilgi-al">Bilgi Al →</span>
-            </div>
-            <div class="hizmet-kart" onclick="location.href='iletisim.html'">
-                <span class="ikon">⚙️</span>
-                <h3>IT Hizmeti</h3>
-                <p>Donanım ve yazılım süreçlerinizde tam kontrol.</p>
-                <span class="bilgi-al">Bilgi Al →</span>
-            </div>
-            <div class="hizmet-kart" onclick="location.href='iletisim.html'">
-                <span class="ikon">🛠️</span>
-                <h3>Teknik Servis</h3>
-                <p>Cihazlarınız için hızlı ve garantili teknik onarım.</p>
-                <span class="bilgi-al">Bilgi Al →</span>
-            </div>
-            <div class="hizmet-kart" onclick="location.href='iletisim.html'">
-                <span class="ikon">🚀</span>
-                <h3>Mobil Uygulama</h3>
-                <p>Fikirlerinizi cebe taşıyan özel yazılım projeleri.</p>
-                <span class="bilgi-al">Bilgi Al →</span>
-            </div>
-            <div class="hizmet-kart" onclick="location.href='iletisim.html'">
-                <span class="ikon">🔒</span>
-                <h3>Siber Güvenlik</h3>
-                <p>Verilerinizi siber tehditlere karşı pembe bir kalkanla koruyun.</p>
-                <span class="bilgi-al">Bilgi Al →</span>
-            </div>
-            <div class="hizmet-kart" onclick="location.href='iletisim.html'">
-                <span class="ikon">📈</span>
-                <h3>Veri Analizi</h3>
-                <p>Rakamları işinizi büyütecek stratejilere çeviriyoruz.</p>
-                <span class="bilgi-al">Bilgi Al →</span>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <div class="footer-container">
-            <div class="footer-box">
-                <div class="logo" style="margin-bottom: 15px;">FURKAN</div>
-                <p>Siyahın gücü ve pembenin vizyonuyla dijital dünyadayız.</p>
-            </div>
-            <div class="footer-box">
-                <h4>Menü</h4>
-                <a href="index.html">Ana Sayfa</a>
-                <a href="hakkimda.html">Hakkımda</a>
-                <a href="iletisim.html">İletişim</a>
-            </div>
-            <div class="footer-box">
-                <h4>İletişim</h4>
-                <p>📧 info@furkan055.com</p>
-                <p>📍 İstanbul, Türkiye</p>
-            </div>
-        </div>
-        <div class="copyright">© 2026 Furkan Dijital. Tüm Hakları Saklıdır.</div>
-    </footer>
-
-</body>
-</html>
+        @
