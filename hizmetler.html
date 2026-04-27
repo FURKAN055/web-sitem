@@ -36,71 +36,59 @@
 
         .container { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
 
-        /* HİZMETLERİMİZ BANNER */
+        /* HİZMETLERİMİZ ÜST PANEL */
         .pink-header { 
             background: linear-gradient(135deg, #ff007f 0%, #cc0066 100%); 
             border-radius: 30px; 
             padding: 60px 40px; 
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             box-shadow: 0 15px 40px rgba(255, 0, 127, 0.3);
         }
-        .pink-header h1 { font-size: 3rem; font-weight: 900; color: white; margin-bottom: 15px; }
-        .pink-header p { font-size: 1.2rem; color: white; opacity: 0.9; }
+        .pink-header h1 { font-size: 3rem; font-weight: 900; color: white; margin-bottom: 10px; }
 
-        /* ESKİ DÜZEN: GENİŞ BEYAZ KARTLAR */
+        /* İSTEDİĞİN O ESKİ VE TEMİZ DÜZEN (ALT ALTA/YAN YANA FERAH KARTLAR) */
         .services-grid { 
             display: grid; 
             grid-template-columns: repeat(3, 1fr); 
             gap: 25px; 
-            margin-bottom: 100px;
+            margin-bottom: 80px;
         }
         
         .service-card { 
             background: var(--kart-arkaplan); 
             color: black; 
             padding: 35px 25px; 
-            border-radius: 25px; 
-            text-decoration: none; 
+            border-radius: 20px; 
             transition: 0.4s; 
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            text-align: left;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
-        .service-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(255, 0, 127, 0.2); }
-        .service-card h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 15px; color: #000; }
-        .service-card p { font-size: 0.95rem; color: #555; line-height: 1.5; }
+        .service-card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(255, 0, 127, 0.2); }
+        .service-card h3 { font-size: 1.4rem; font-weight: 800; color: #000; display: flex; align-items: center; gap: 10px; }
+        .service-card p { font-size: 0.95rem; color: #444; }
 
-        /* NEDEN BİZ + İSTATİSTİKLER (YAN YANA DÜZEN) */
+        /* NEDEN BİZ BÖLÜMÜ */
         .why-us-section { background: #080808; padding: 100px 0; border-top: 1px solid #1a1a1a; }
         .why-us-flex { display: flex; max-width: 1200px; margin: 0 auto; padding: 0 20px; gap: 60px; align-items: center; }
         
-        .why-us-text { flex: 1.5; }
-        .why-us-text h2 { font-size: 3rem; color: var(--ana-pembe); margin-bottom: 30px; font-weight: 900; }
-        .why-us-text p { font-size: 1.15rem; color: #ddd; margin-bottom: 20px; }
-        .vurgu-not { font-size: 1.4rem; color: var(--ana-pembe); font-weight: 800; border-left: 5px solid var(--ana-pembe); padding-left: 20px; margin-top: 40px; }
+        .why-us-text { flex: 1.6; }
+        .why-us-text h2 { font-size: 3rem; color: var(--ana-pembe); margin-bottom: 25px; font-weight: 900; }
+        .why-us-text p { font-size: 1.1rem; color: #ccc; margin-bottom: 15px; }
+        .vurgu-not { font-size: 1.4rem; color: var(--ana-pembe); font-weight: 800; border-left: 5px solid var(--ana-pembe); padding-left: 20px; margin-top: 30px; }
 
         .stats-side { flex: 1; display: flex; flex-direction: column; gap: 20px; }
-        .stat-box { 
-            background: #111; 
-            padding: 30px; 
-            border-radius: 20px; 
-            text-align: center; 
-            border-bottom: 4px solid var(--ana-pembe); 
-        }
-        .stat-box h4 { font-size: 2.8rem; color: var(--ana-pembe); margin: 0; font-weight: 900; }
-        .stat-box span { font-size: 0.85rem; color: white; opacity: 0.7; text-transform: uppercase; letter-spacing: 2px; }
-
-        /* FOOTER */
-        footer { background: #000; border-top: 2px solid var(--ana-pembe); padding: 60px 0 30px; }
-        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1.5fr; gap: 50px; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .footer-box h5 { color: var(--ana-pembe); margin-bottom: 20px; font-size: 1.1rem; font-weight: 800; }
-        .footer-box p { color: #888; font-size: 0.95rem; margin-bottom: 10px; }
+        .stat-box { background: #111; padding: 30px; border-radius: 20px; text-align: center; border-bottom: 4px solid var(--ana-pembe); }
+        .stat-box h4 { font-size: 2.8rem; color: var(--ana-pembe); font-weight: 900; margin: 0; }
+        .stat-box span { font-size: 0.8rem; color: #aaa; text-transform: uppercase; letter-spacing: 2px; }
 
         /* WHATSAPP */
         .whatsapp-btn { 
             position: fixed; bottom: 30px; right: 30px; background: #25d366; 
             width: 65px; height: 65px; border-radius: 50%; display: flex; 
-            align-items: center; justify-content: center; z-index: 1000;
+            align-items: center; justify-content: center; z-index: 2000;
             border: 2px solid white; box-shadow: 0 10px 20px rgba(0,0,0,0.5);
         }
 
@@ -108,7 +96,7 @@
         @media (max-width: 800px) { 
             .services-grid { grid-template-columns: 1fr; }
             .why-us-flex { flex-direction: column; text-align: center; }
-            .vurgu-not { border-left: none; border-top: 5px solid var(--ana-pembe); padding-left: 0; padding-top: 15px; }
+            .vurgu-not { border-left: none; border-top: 4px solid var(--ana-pembe); padding-top: 15px; }
         }
     </style>
 </head>
@@ -127,62 +115,13 @@
     <div class="container">
         <div class="pink-header">
             <h1>Hizmetlerimiz</h1>
-            <p>Teknoay Bilişim olarak sunduğumuz tüm dijital ve teknik çözümler aşağıdadır.</p>
+            <p>Profesyonel, güvenilir ve çözüm odaklı bilişim hizmetleri.</p>
         </div>
 
         <div class="services-grid">
-            <div class="service-card"><h3>💻 Web Tasarım</h3><p>Markanızı yansıtan, modern ve yüksek performanslı web sistemleri geliştiriyoruz.</p></div>
-            <div class="service-card"><h3>📱 Sosyal Medya</h3><p>Dijital pazarlama stratejileri ile hedef kitlenize ulaşmanızı sağlıyoruz.</p></div>
-            <div class="service-card"><h3>⚙️ IT Altyapı Hizmeti</h3><p>Kurumsal ağ yönetimi ve sistem güvenliği süreçlerinde tam destek sunuyoruz.</p></div>
-            <div class="service-card"><h3>🛠️ Teknik Servis</h3><p>Bilgisayar ve donanım onarımında hızlı ve garantili profesyonel çözümler.</p></div>
-            <div class="service-card"><h3>🛡️ Siber Güvenlik</h3><p>Verilerinizi ve dijital varlıklarınızı en güncel protokollerle koruyoruz.</p></div>
-            <div class="service-card"><h3>🚀 Yazılım Geliştirme</h3><p>İhtiyaçlarınıza özel, ölçeklenebilir ve yenilikçi yazılım çözümleri üretiyoruz.</p></div>
-            <div class="service-card"><h3>📊 Veri Analizi</h3><p>İşletmenizin verilerini anlamlandırarak stratejik karar alma süreçlerinizi destekliyoruz.</p></div>
-        </div>
-    </div>
-
-    <section class="why-us-section">
-        <div class="why-us-flex">
-            <div class="why-us-text">
-                <h2>Neden Biz?</h2>
-                <p>Dijital dünyada doğru iş ortağını seçmek, başarının en kritik adımlarından biridir. Biz, sadece hizmet sunan bir ekip değil; işinizi büyütmeye odaklanan stratejik bir çözüm ortağıyız.</p>
-                <p>2020 yılından bu yana edindiğimiz saha deneyimiyle, farklı sektörlerin ihtiyaçlarını yakından tanıyor ve her projeye özel çözümler geliştiriyoruz. Standart kalıplar yerine, markanıza ve hedeflerinize uygun çalışmalar sunuyoruz.</p>
-                <p>Geniş hizmet yelpazemiz sayesinde tüm dijital ihtiyaçlarınıza tek noktadan çözüm sağlıyoruz. Web tasarımından teknik servise kadar entegre hizmet sunarak zaman ve maliyet avantajı yaratıyoruz.</p>
-                <div class="vurgu-not">"Çünkü biz, işinizi kendi işimiz gibi sahipleniriz."</div>
-            </div>
-            
-            <div class="stats-side">
-                <div class="stat-box"><h4>10+</h4><span>Yıllık Deneyim</span></div>
-                <div class="stat-box"><h4>500+</h4><span>Başarılı Proje</span></div>
-                <div class="stat-box"><h4>100%</h4><span>Müşteri Memnuniyeti</span></div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-box">
-                <h5>TEKNOAY BİLİŞİM</h5>
-                <p>Teknoloji ve stratejiyi birleştirerek dijital dönüşüme liderlik ediyoruz.</p>
-            </div>
-            <div class="footer-box">
-                <h5>Hızlı Menü</h5>
-                <p>Ana Sayfa</p>
-                <p>Hakkımda</p>
-                <p>İletişim</p>
-            </div>
-            <div class="footer-box">
-                <h5>İletişim</h5>
-                <p>📍 Üniversite Mah Cami Sok No : 6 AVCILAR</p>
-                <p>📧 info@teknoaybilisim.com</p>
-                <p>📞 +90 530 044 81 79</p>
-            </div>
-        </div>
-    </footer>
-
-    <a href="https://wa.me/905300448179" class="whatsapp-btn" target="_blank">
-        <svg viewBox="0 0 32 32" style="width:35px; fill:white;"><path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.733 5.476 2.017 7.783l-2.017 7.371 7.54-1.981c2.247 1.213 4.83 1.903 7.577 1.903 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.333c-2.453 0-4.757-0.613-6.779-1.688l-0.485-0.259-4.485 1.177 1.201-4.388-0.285-0.453c-1.144-1.815-1.811-3.968-1.811-6.273 0-6.617 5.383-12 12-12s12 5.383 12 12-5.383 12-12 12zM21.904 18.067c-0.325-0.163-1.921-0.947-2.22-1.056s-0.517-0.163-0.733 0.163-0.833 1.056-1.023 1.272-0.379 0.244-0.704 0.081c-0.325-0.163-1.373-0.507-2.616-1.616-0.967-0.863-1.62-1.928-1.809-2.253s-0.020-0.501 0.143-0.663c0.147-0.145 0.325-0.379 0.488-0.569s0.217-0.325 0.325-0.541 0.054-0.407-0.027-0.569c-0.081-0.163-0.733-1.765-1.004-2.417s-0.531-0.541-0.733-0.551c-0.191-0.010-0.411-0.011-0.631-0.011s-0.579 0.081-0.881 0.415c-0.301 0.333-1.152 1.127-1.152 2.747s1.179 3.181 1.341 3.4c0.163 0.22 2.321 3.543 5.623 4.968 0.785 0.339 1.397 0.541 1.873 0.693 0.788 0.251 1.505 0.215 2.072 0.131 0.632-0.093 1.921-0.785 2.192-1.543s0.271-1.409 0.191-1.543c-0.081-0.135-0.299-0.216-0.624-0.379z"></path></svg>
-    </a>
-
-</body>
-</html>
+            <div class="service-card"><h3>💻 Web Tasarım</h3><p>Markanızı dijital dünyada öne çıkaran modern ve kurumsal web arayüzleri geliştiriyoruz.</p></div>
+            <div class="service-card"><h3>📱 Sosyal Medya</h3><p>Sosyal medya hesaplarınızı profesyonel içeriklerle yöneterek etkileşiminizi artırıyoruz.</p></div>
+            <div class="service-card"><h3>⚙️ IT Altyapı Hizmeti</h3><p>Şirket içi ağ kurulumu, sunucu yönetimi ve kesintisiz bilişim desteği sağlıyoruz.</p></div>
+            <div class="service-card"><h3>🛠️ Teknik Servis</h3><p>Arızalı cihazlarınız için hızlı teşhis ve kaliteli parça değişimi ile servis desteği sunuyoruz.</p></div>
+            <div class="service-card"><h3>🛡️ Siber Güvenlik</h3><p>Dijital verilerinizi saldırılara karşı en üst düzey güvenlik önlemleri ile koruma altına alıyoruz.</p></div>
+            <div class="service-card"><h3>
