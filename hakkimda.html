@@ -1,1 +1,77 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakkımızda - Furkan</title>
+    <style>
+        :root {
+            --arka-plan: #0b0f19;
+            --kart-renk: #161b28;
+            --ana-mavi: #00d2ff;
+            --yazi-beyaz: #ffffff;
+            --yazi-gri: #94a3b8;
+        }
 
+        body { background-color: var(--arka-plan); color: var(--yazi-beyaz); font-family: sans-serif; margin: 0; line-height: 1.8; }
+
+        /* Menü */
+        nav { display: flex; justify-content: space-around; align-items: center; padding: 20px 0; background: rgba(11, 15, 25, 0.9); border-bottom: 1px solid #1e293b; }
+        nav a { color: var(--yazi-beyaz); text-decoration: none; margin: 0 15px; font-weight: 500; }
+        nav a:hover { color: var(--ana-mavi); }
+        .logo { font-size: 24px; font-weight: bold; color: var(--ana-mavi); text-decoration:none; }
+
+        /* İçerik */
+        .container { max-width: 900px; margin: 80px auto; padding: 0 20px; }
+        .baslik { color: var(--ana-mavi); font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; }
+        h1 { font-size: 3rem; margin: 10px 0 30px 0; }
+        .metin { font-size: 1.1rem; color: var(--yazi-gri); }
+        
+        .ozellikler {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .ozellik-kart {
+            border-left: 3px solid var(--ana-mavi);
+            padding-left: 20px;
+        }
+        .ozellik-kart h3 { margin: 0; color: white; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">FURKAN</a>
+        <div>
+            <a href="index.html">Ana Sayfa</a>
+            <a href="hakkimda.html" style="color: var(--ana-mavi);">Hakkımda</a>
+            <a href="hizmetler.html">Hizmetler</a>
+            <a href="iletisim.html">İletişim</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <span class="baslik">Hikayemiz</span>
+        <h1>Dijitalde <span style="color: var(--ana-mavi);">Fark Yaratıyoruz</span></h1>
+        
+        <p class="metin">
+            BossyDigital vizyonuyla, teknolojiyi ve stratejiyi bir araya getirerek modern dünyanın ihtiyaçlarına yönelik projeler geliştiriyoruz. 
+            Sadece bir web sitesi değil, markaların dijitaldeki büyüme motoru olmayı hedefliyoruz.
+        </p>
+
+        <div class="ozellikler">
+            <div class="ozellik-kart">
+                <h3>Vizyonumuz</h3>
+                <p class="metin">Her projede en yeni teknolojileri kullanarak sektöre yön vermek.</p>
+            </div>
+            <div class="ozellik-kart">
+                <h3>Misyonumuz</h3>
+                <p class="metin">Müşterilerimize ölçülebilir ve sürdürülebilir başarılar sağlamak.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
