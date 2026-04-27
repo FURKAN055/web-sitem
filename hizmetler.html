@@ -9,12 +9,12 @@
             --arka-plan: #0b0f19;
             --kart-renk: #ffffff;
             --ana-mavi: #00d2ff;
-            --yazi-koyu: #1e293b;
-            --yazi-gri: #64748b;
+            --yazi-koyu: #0f172a; /* Çok daha belirgin bir koyu ton */
+            --yazi-gri: #334155; /* Okunabilirliği yüksek koyu gri */
             --vurgu-gradyan: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
         }
 
-        body { background-color: var(--arka-plan); color: white; font-family: 'Segoe UI', sans-serif; margin: 0; overflow-x: hidden; }
+        body { background-color: var(--arka-plan); color: white; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; margin: 0; overflow-x: hidden; }
 
         /* Navigasyon */
         nav { display: flex; justify-content: space-around; align-items: center; padding: 20px 0; background: rgba(11, 15, 25, 0.95); border-bottom: 1px solid #1e293b; position: sticky; top: 0; z-index: 1000; }
@@ -44,7 +44,7 @@
         }
 
         .vurgu-alani h2 { font-size: 2rem; margin-bottom: 15px; line-height: 1.2; color: white; }
-        .vurgu-alani p { font-size: 1rem; opacity: 0.9; margin-bottom: 25px; color: white; }
+        .vurgu-alani p { font-size: 1rem; opacity: 0.95; margin-bottom: 25px; color: white; font-weight: 500; }
 
         /* Sağ Grid */
         .hizmet-grid {
@@ -63,7 +63,7 @@
             flex-direction: column;
             border: 1px solid transparent;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            text-decoration: none; /* Link özelliğini temizle */
+            text-decoration: none;
         }
 
         .hizmet-kart:hover {
@@ -84,9 +84,25 @@
             transform: rotate(10deg) scale(1.2);
         }
 
-        .hizmet-kart h3 { color: var(--yazi-koyu); font-size: 1.1rem; margin: 0 0 10px 0; font-weight: 700; }
-        .hizmet-kart p { color: var(--yazi-gri); font-size: 0.9rem; margin-bottom: 15px; line-height: 1.5; flex-grow: 1; }
-        .hizmet-kart .bilgi-al { color: var(--ana-mavi); font-size: 0.85rem; font-weight: bold; }
+        /* Başlıklar - Çok Net */
+        .hizmet-kart h3 { 
+            color: var(--yazi-koyu); 
+            font-size: 1.15rem; 
+            margin: 0 0 12px 0; 
+            font-weight: 800; 
+        }
+
+        /* Alt Yazılar - Okunabilirliği Artırılmış */
+        .hizmet-kart p { 
+            color: var(--yazi-gri); 
+            font-size: 0.98rem; 
+            margin-bottom: 15px; 
+            line-height: 1.6; 
+            flex-grow: 1;
+            font-weight: 500; 
+        }
+
+        .hizmet-kart .bilgi-al { color: var(--ana-mavi); font-size: 0.9rem; font-weight: 700; }
 
         /* Mobil Uyumluluk */
         @media (max-width: 1024px) {
@@ -119,59 +135,59 @@
         </div>
 
         <div class="hizmet-grid">
-            <div class="hizmet-kart">
+            <div class="hizmet-kart" onclick="location.href='iletisim.html'">
                 <span class="ikon">💻</span>
                 <h3>WEB TASARIM</h3>
-                <p>Kullanıcı odaklı, modern ve hızlı web arayüzleri.</p>
+                <p>Kullanıcı odaklı, modern, hızlı ve SEO uyumlu web arayüzleri geliştiriyoruz.</p>
                 <span class="bilgi-al">Bilgi Al →</span>
             </div>
 
-            <div class="hizmet-kart">
+            <div class="hizmet-kart" onclick="location.href='iletisim.html'">
                 <span class="ikon">📱</span>
                 <h3>SOSYAL MEDYA</h3>
-                <p>Markanızın dijital sesini güçlendiren stratejiler.</p>
+                <p>Markanızın dijital dünyadaki sesini güçlendiriyor, hedef kitlenizle bağı kuruyoruz.</p>
                 <span class="bilgi-al">Bilgi Al →</span>
             </div>
 
-            <div class="hizmet-kart">
+            <div class="hizmet-kart" onclick="location.href='iletisim.html'">
                 <span class="ikon">🎴</span>
                 <h3>DİJİTAL KARTVİZİT</h3>
-                <p>Yeni nesil profesyonel tanışma çözümleri.</p>
+                <p>Kağıt israfına son veren, hızlı ve profesyonel yeni nesil tanışma teknolojisi.</p>
                 <span class="bilgi-al">Bilgi Al →</span>
             </div>
 
-            <div class="hizmet-kart">
+            <div class="hizmet-kart" onclick="location.href='iletisim.html'">
                 <span class="ikon">⚙️</span>
                 <h3>IT HİZMETİ</h3>
-                <p>Kurumsal altyapı ve kesintisiz operasyon desteği.</p>
+                <p>Sistem yönetimi, kurumsal altyapı kurulumu ve kesintisiz teknik destek.</p>
                 <span class="bilgi-al">Bilgi Al →</span>
             </div>
 
-            <div class="hizmet-kart">
+            <div class="hizmet-kart" onclick="location.href='iletisim.html'">
                 <span class="ikon">🛠️</span>
                 <h3>TEKNİK SERVİS</h3>
-                <p>Bilgisayar ve telefonlarınız için profesyonel onarım.</p>
+                <p>Bilgisayar ve akıllı telefon donanım arızalarında uzman onarım ve parça desteği.</p>
                 <span class="bilgi-al">Bilgi Al →</span>
             </div>
 
-            <div class="hizmet-kart">
+            <div class="hizmet-kart" onclick="location.href='iletisim.html'">
                 <span class="ikon">🚀</span>
                 <h3>MOBİL UYGULAMA</h3>
-                <p>iOS ve Android platformları için özel yazılımlar.</p>
+                <p>iOS ve Android için fikirlerinizi gerçeğe dönüştüren kullanıcı dostu yazılımlar.</p>
                 <span class="bilgi-al">Bilgi Al →</span>
             </div>
 
-            <div class="hizmet-kart">
+            <div class="hizmet-kart" onclick="location.href='iletisim.html'">
                 <span class="ikon">🔒</span>
                 <h3>SİBER GÜVENLİK</h3>
-                <p>Verilerinizi tehditlere karşı koruma altına alın.</p>
+                <p>Verilerinizi siber saldırılara karşı en güncel güvenlik protokolleri ile koruyoruz.</p>
                 <span class="bilgi-al">Bilgi Al →</span>
             </div>
 
-            <div class="hizmet-kart">
+            <div class="hizmet-kart" onclick="location.href='iletisim.html'">
                 <span class="ikon">📈</span>
                 <h3>VERI ANALİZİ</h3>
-                <p>Verileri kazanca dönüştüren raporlama sistemleri.</p>
+                <p> Karmaşık verileri analiz ederek işinizi büyütmenizi sağlayacak stratejik raporlar sunuyoruz.</p>
                 <span class="bilgi-al">Bilgi Al →</span>
             </div>
         </div>
