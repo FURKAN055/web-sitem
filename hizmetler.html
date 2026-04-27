@@ -3,51 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hizmetlerimiz - Furkan</title>
+    <title>Hizmetlerimiz - Furkan Dijital</title>
     <style>
         :root {
             --arka-plan: #0b0f19;
-            --kart-renk: #161b28;
+            --kart-renk: #ffffff;
             --ana-mavi: #00d2ff;
-            --yazi-beyaz: #ffffff;
-            --yazi-gri: #94a3b8;
+            --yazi-koyu: #1e293b;
+            --yazi-gri: #64748b;
+            --vurgu-gradyan: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
         }
 
-        body { background-color: var(--arka-plan); color: var(--yazi-beyaz); font-family: sans-serif; margin: 0; }
+        body { background-color: var(--arka-plan); color: white; font-family: 'Segoe UI', sans-serif; margin: 0; }
 
-        /* Menü (Tüm sayfalarda aynı kalmalı) */
+        /* Navigasyon */
         nav { display: flex; justify-content: space-around; align-items: center; padding: 20px 0; background: rgba(11, 15, 25, 0.9); border-bottom: 1px solid #1e293b; }
-        nav a { color: var(--yazi-beyaz); text-decoration: none; margin: 0 15px; font-weight: 500; }
+        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: 500; }
         nav a:hover { color: var(--ana-mavi); }
         .logo { font-size: 24px; font-weight: bold; color: var(--ana-mavi); text-decoration:none; }
 
-        /* Hizmetler Bölümü */
-        .container { max-width: 1100px; margin: 50px auto; padding: 0 20px; text-align: center; }
-        h1 { font-size: 2.5rem; margin-bottom: 40px; }
-        
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        /* Hizmetler Konteynırı */
+        .hizmet-bolumu {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+            display: flex;
             gap: 20px;
         }
 
-        .kart {
+        /* Sol Taraftaki Büyük Dikey Kart */
+        .vurgu-alani {
+            flex: 0 0 300px;
+            background: var(--vurgu-gradyan);
+            border-radius: 20px;
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vurgu-alani h2 { font-size: 2rem; margin-bottom: 15px; line-height: 1.2; color: white; }
+        .vurgu-alani p { font-size: 1rem; opacity: 0.9; margin-bottom: 25px; color: white; }
+
+        /* Sağ Taraftaki 8'li Grid */
+        .hizmet-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            flex-grow: 1;
+        }
+
+        .hizmet-kart {
             background: var(--kart-renk);
-            padding: 30px;
             border-radius: 15px;
-            border: 1px solid #1e293b;
+            padding: 25px;
             transition: 0.3s;
-            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        .kart:hover {
-            border-color: var(--ana-mavi);
-            transform: translateY(-10px);
-        }
+        .hizmet-kart:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
 
-        .icon { font-size: 40px; margin-bottom: 20px; display: block; }
-        .kart h3 { color: var(--ana-mavi); margin-top: 0; }
-        .kart p { color: var(--yazi-gri); font-size: 0.95rem; }
+        .hizmet-kart .ikon { color: #10b981; font-size: 24px; margin-bottom: 15px; }
+        .hizmet-kart h3 { color: var(--yazi-koyu); font-size: 1.1rem; margin: 0 0 10px 0; }
+        .hizmet-kart p { color: var(--yazi-gri); font-size: 0.85rem; margin-bottom: 15px; line-height: 1.4; }
+        .hizmet-kart .detay-link { color: var(--yazi-koyu); text-decoration: none; font-size: 0.8rem; font-weight: bold; border-bottom: 1px solid #ddd; width: fit-content; }
+
+        @media (max-width: 1024px) {
+            .hizmet-bolumu { flex-direction: column; }
+            .vurgu-alani { flex: none; height: 300px; }
+            .hizmet-grid { grid-template-columns: repeat(2, 1fr); }
+        }
     </style>
 </head>
 <body>
@@ -62,32 +91,61 @@
         </div>
     </nav>
 
-    <div class="container">
-        <h1>Neler <span style="color: var(--ana-mavi);">Sunuyoruz?</span></h1>
-        
-        <div class="grid">
-            <div class="kart">
-                <span class="icon">🚀</span>
-                <h3>Performans Pazarlama</h3>
-                <p>Veriye dayalı stratejilerle reklam bütçenizi en verimli şekilde yönetiyor, satışlarınızı artırıyoruz.</p>
-            </div>
+    <div class="hizmet-bolumu">
+        <div class="vurgu-alani">
+            <h2>Uçtan uca yönetilen dijital operasyon</h2>
+            <p>7/24 kesintisiz destek ve stratejik danışmanlık tek çatı altında.</p>
+            <a href="iletisim.html" style="background:black; color:white; padding:10px 20px; border-radius:30px; text-decoration:none; text-align:center; font-size:0.9rem;">Daha fazla bilgi edinin →</a>
+        </div>
 
-            <div class="kart">
-                <span class="icon">🔍</span>
-                <h3>SEO Danışmanlığı</h3>
-                <p>Arama motorlarında görünürlüğünüzü artırarak organik trafiğinizi zirveye taşıyoruz.</p>
+        <div class="hizmet-grid">
+            <div class="hizmet-kart">
+                <div class="ikon">🖥️</div>
+                <h3>IT Destek Hizmetleri</h3>
+                <p>Yerinde ve uzaktan 7/24 profesyonel teknik destek.</p>
+                <a href="#" class="detay-link">Daha fazla bilgi edinin</a>
             </div>
-
-            <div class="kart">
-                <span class="icon">💻</span>
-                <h3>Web Tasarım</h3>
-                <p>Modern, hızlı ve kullanıcı dostu arayüzlerle markanızın dijital yüzünü yeniliyoruz.</p>
+            <div class="hizmet-kart">
+                <div class="ikon">🛡️</div>
+                <h3>Siber Güvenlik</h3>
+                <p>Tehdit analizi ve sürekli güvenlik takibi.</p>
+                <a href="#" class="detay-link">Daha fazla bilgi edinin</a>
             </div>
-
-            <div class="kart">
-                <span class="icon">📈</span>
+            <div class="hizmet-kart">
+                <div class="ikon">☁️</div>
+                <h3>Sanal Sunucu</h3>
+                <p>Yüksek performanslı bulut altyapı çözümleri.</p>
+                <a href="#" class="detay-link">Daha fazla bilgi edinin</a>
+            </div>
+            <div class="hizmet-kart">
+                <div class="ikon">📡</div>
+                <h3>Network Hizmetleri</h3>
+                <p>Kesintisiz ve güvenli ağ altyapı kurulumu.</p>
+                <a href="#" class="detay-link">Daha fazla bilgi edinin</a>
+            </div>
+            <div class="hizmet-kart">
+                <div class="ikon">📊</div>
                 <h3>Veri Analizi</h3>
-                <p>Sadece rakamlara değil, sonuçlara odaklanarak büyüme hedeflerinizi raporluyoruz.</p>
+                <p>İşletmenizin verilerini kazanca dönüştürün.</p>
+                <a href="#" class="detay-link">Daha fazla bilgi edinin</a>
+            </div>
+            <div class="hizmet-kart">
+                <div class="ikon">📧</div>
+                <h3>E-Posta Yönetimi</h3>
+                <p>Kurumsal e-posta ve iletişim çözümleri.</p>
+                <a href="#" class="detay-link">Daha fazla bilgi edinin</a>
+            </div>
+            <div class="hizmet-kart">
+                <div class="ikon">📱</div>
+                <h3>Mobil Uygulama</h3>
+                <p>iOS ve Android için modern uygulama geliştirme.</p>
+                <a href="#" class="detay-link">Daha fazla bilgi edinin</a>
+            </div>
+            <div class="hizmet-kart">
+                <div class="ikon">🎨</div>
+                <h3>UI/UX Tasarım</h3>
+                <p>Kullanıcı odaklı modern arayüz tasarımları.</p>
+                <a href="#" class="detay-link">Daha fazla bilgi edinin</a>
             </div>
         </div>
     </div>
