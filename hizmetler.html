@@ -9,12 +9,12 @@
             --arka-plan: #0b0f19;
             --kart-renk: #ffffff;
             --ana-mavi: #00d2ff;
-            --yazi-koyu: #0f172a; /* Çok daha belirgin bir koyu ton */
-            --yazi-gri: #334155; /* Okunabilirliği yüksek koyu gri */
+            --yazi-koyu: #0f172a;
+            --yazi-gri: #334155;
             --vurgu-gradyan: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
         }
 
-        body { background-color: var(--arka-plan); color: white; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; margin: 0; overflow-x: hidden; }
+        body { background-color: var(--arka-plan); color: white; font-family: 'Segoe UI', sans-serif; margin: 0; overflow-x: hidden; }
 
         /* Navigasyon */
         nav { display: flex; justify-content: space-around; align-items: center; padding: 20px 0; background: rgba(11, 15, 25, 0.95); border-bottom: 1px solid #1e293b; position: sticky; top: 0; z-index: 1000; }
@@ -54,7 +54,7 @@
             flex-grow: 1;
         }
 
-        /* --- KART TASARIMI VE HOVER EFEKTLERİ --- */
+        /* KART TASARIMI VE HOVER EFEKTLERİ */
         .hizmet-kart {
             background: var(--kart-renk);
             border-radius: 15px;
@@ -73,45 +73,25 @@
             cursor: pointer;
         }
 
-        .hizmet-kart .ikon { 
-            font-size: 32px; 
-            margin-bottom: 15px; 
-            display: inline-block;
-            transition: 0.3s;
-        }
-
-        .hizmet-kart:hover .ikon {
-            transform: rotate(10deg) scale(1.2);
-        }
-
-        /* Başlıklar - Çok Net */
-        .hizmet-kart h3 { 
-            color: var(--yazi-koyu); 
-            font-size: 1.15rem; 
-            margin: 0 0 12px 0; 
-            font-weight: 800; 
-        }
-
-        /* Alt Yazılar - Okunabilirliği Artırılmış */
-        .hizmet-kart p { 
-            color: var(--yazi-gri); 
-            font-size: 0.98rem; 
-            margin-bottom: 15px; 
-            line-height: 1.6; 
-            flex-grow: 1;
-            font-weight: 500; 
-        }
-
+        .hizmet-kart .ikon { font-size: 32px; margin-bottom: 15px; transition: 0.3s; }
+        .hizmet-kart:hover .ikon { transform: rotate(10deg) scale(1.2); }
+        .hizmet-kart h3 { color: var(--yazi-koyu); font-size: 1.15rem; margin: 0 0 12px 0; font-weight: 800; }
+        .hizmet-kart p { color: var(--yazi-gri); font-size: 0.98rem; margin-bottom: 15px; line-height: 1.6; flex-grow: 1; font-weight: 500; }
         .hizmet-kart .bilgi-al { color: var(--ana-mavi); font-size: 0.9rem; font-weight: 700; }
 
-        /* Mobil Uyumluluk */
+        /* FOOTER TASARIMI */
+        footer { background-color: #050812; padding: 60px 0 20px 0; border-top: 1px solid #1e293b; margin-top: 100px; }
+        .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1.5fr; gap: 50px; padding: 0 20px; }
+        .footer-box h4 { color: var(--ana-mavi); font-size: 1.2rem; margin-bottom: 20px; text-transform: uppercase; }
+        .footer-box p, .footer-box a { color: #94a3b8; text-decoration: none; font-size: 0.95rem; line-height: 1.8; display: block; margin-bottom: 10px; transition: 0.3s; }
+        .footer-box a:hover { color: var(--ana-mavi); padding-left: 5px; }
+        .copyright { text-align: center; margin-top: 50px; padding-top: 20px; border-top: 1px solid #1e293b; color: #64748b; font-size: 0.85rem; }
+
         @media (max-width: 1024px) {
             .hizmet-bolumu { flex-direction: column; }
             .vurgu-alani { flex: none; height: 250px; }
             .hizmet-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (max-width: 600px) {
-            .hizmet-grid { grid-template-columns: 1fr; }
+            .footer-container { grid-template-columns: 1fr; text-align: center; }
         }
     </style>
 </head>
@@ -120,78 +100,4 @@
     <nav>
         <a href="index.html" class="logo">FURKAN</a>
         <div>
-            <a href="index.html">Ana Sayfa</a>
-            <a href="hakkimda.html">Hakkımda</a>
-            <a href="hizmetler.html" style="color: var(--ana-mavi);">Hizmetler</a>
-            <a href="iletisim.html">İletişim</a>
-        </div>
-    </nav>
-
-    <div class="hizmet-bolumu">
-        <div class="vurgu-alani">
-            <h2>Uçtan Uca Dijital ve Teknik Çözümler</h2>
-            <p>Yazılımdan donanıma, tüm teknolojik ihtiyaçlarınız profesyonel ellerde.</p>
-            <a href="iletisim.html" style="background:white; color:#1e293b; padding:12px 25px; border-radius:30px; text-decoration:none; text-align:center; font-size:0.9rem; font-weight:bold; transition:0.3s;">Bize Ulaşın</a>
-        </div>
-
-        <div class="hizmet-grid">
-            <div class="hizmet-kart" onclick="location.href='iletisim.html'">
-                <span class="ikon">💻</span>
-                <h3>WEB TASARIM</h3>
-                <p>Kullanıcı odaklı, modern, hızlı ve SEO uyumlu web arayüzleri geliştiriyoruz.</p>
-                <span class="bilgi-al">Bilgi Al →</span>
-            </div>
-
-            <div class="hizmet-kart" onclick="location.href='iletisim.html'">
-                <span class="ikon">📱</span>
-                <h3>SOSYAL MEDYA</h3>
-                <p>Markanızın dijital dünyadaki sesini güçlendiriyor, hedef kitlenizle bağı kuruyoruz.</p>
-                <span class="bilgi-al">Bilgi Al →</span>
-            </div>
-
-            <div class="hizmet-kart" onclick="location.href='iletisim.html'">
-                <span class="ikon">🎴</span>
-                <h3>DİJİTAL KARTVİZİT</h3>
-                <p>Kağıt israfına son veren, hızlı ve profesyonel yeni nesil tanışma teknolojisi.</p>
-                <span class="bilgi-al">Bilgi Al →</span>
-            </div>
-
-            <div class="hizmet-kart" onclick="location.href='iletisim.html'">
-                <span class="ikon">⚙️</span>
-                <h3>IT HİZMETİ</h3>
-                <p>Sistem yönetimi, kurumsal altyapı kurulumu ve kesintisiz teknik destek.</p>
-                <span class="bilgi-al">Bilgi Al →</span>
-            </div>
-
-            <div class="hizmet-kart" onclick="location.href='iletisim.html'">
-                <span class="ikon">🛠️</span>
-                <h3>TEKNİK SERVİS</h3>
-                <p>Bilgisayar ve akıllı telefon donanım arızalarında uzman onarım ve parça desteği.</p>
-                <span class="bilgi-al">Bilgi Al →</span>
-            </div>
-
-            <div class="hizmet-kart" onclick="location.href='iletisim.html'">
-                <span class="ikon">🚀</span>
-                <h3>MOBİL UYGULAMA</h3>
-                <p>iOS ve Android için fikirlerinizi gerçeğe dönüştüren kullanıcı dostu yazılımlar.</p>
-                <span class="bilgi-al">Bilgi Al →</span>
-            </div>
-
-            <div class="hizmet-kart" onclick="location.href='iletisim.html'">
-                <span class="ikon">🔒</span>
-                <h3>SİBER GÜVENLİK</h3>
-                <p>Verilerinizi siber saldırılara karşı en güncel güvenlik protokolleri ile koruyoruz.</p>
-                <span class="bilgi-al">Bilgi Al →</span>
-            </div>
-
-            <div class="hizmet-kart" onclick="location.href='iletisim.html'">
-                <span class="ikon">📈</span>
-                <h3>VERI ANALİZİ</h3>
-                <p> Karmaşık verileri analiz ederek işinizi büyütmenizi sağlayacak stratejik raporlar sunuyoruz.</p>
-                <span class="bilgi-al">Bilgi Al →</span>
-            </div>
-        </div>
-    </div>
-
-</body>
-</html>
+            <a href="index.html
