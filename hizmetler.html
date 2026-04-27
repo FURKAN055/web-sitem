@@ -1,1 +1,96 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hizmetlerimiz - Furkan</title>
+    <style>
+        :root {
+            --arka-plan: #0b0f19;
+            --kart-renk: #161b28;
+            --ana-mavi: #00d2ff;
+            --yazi-beyaz: #ffffff;
+            --yazi-gri: #94a3b8;
+        }
 
+        body { background-color: var(--arka-plan); color: var(--yazi-beyaz); font-family: sans-serif; margin: 0; }
+
+        /* Menü (Tüm sayfalarda aynı kalmalı) */
+        nav { display: flex; justify-content: space-around; align-items: center; padding: 20px 0; background: rgba(11, 15, 25, 0.9); border-bottom: 1px solid #1e293b; }
+        nav a { color: var(--yazi-beyaz); text-decoration: none; margin: 0 15px; font-weight: 500; }
+        nav a:hover { color: var(--ana-mavi); }
+        .logo { font-size: 24px; font-weight: bold; color: var(--ana-mavi); text-decoration:none; }
+
+        /* Hizmetler Bölümü */
+        .container { max-width: 1100px; margin: 50px auto; padding: 0 20px; text-align: center; }
+        h1 { font-size: 2.5rem; margin-bottom: 40px; }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .kart {
+            background: var(--kart-renk);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #1e293b;
+            transition: 0.3s;
+            text-align: left;
+        }
+
+        .kart:hover {
+            border-color: var(--ana-mavi);
+            transform: translateY(-10px);
+        }
+
+        .icon { font-size: 40px; margin-bottom: 20px; display: block; }
+        .kart h3 { color: var(--ana-mavi); margin-top: 0; }
+        .kart p { color: var(--yazi-gri); font-size: 0.95rem; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">FURKAN</a>
+        <div>
+            <a href="index.html">Ana Sayfa</a>
+            <a href="hakkimda.html">Hakkımda</a>
+            <a href="hizmetler.html" style="color: var(--ana-mavi);">Hizmetler</a>
+            <a href="iletisim.html">İletişim</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Neler <span style="color: var(--ana-mavi);">Sunuyoruz?</span></h1>
+        
+        <div class="grid">
+            <div class="kart">
+                <span class="icon">🚀</span>
+                <h3>Performans Pazarlama</h3>
+                <p>Veriye dayalı stratejilerle reklam bütçenizi en verimli şekilde yönetiyor, satışlarınızı artırıyoruz.</p>
+            </div>
+
+            <div class="kart">
+                <span class="icon">🔍</span>
+                <h3>SEO Danışmanlığı</h3>
+                <p>Arama motorlarında görünürlüğünüzü artırarak organik trafiğinizi zirveye taşıyoruz.</p>
+            </div>
+
+            <div class="kart">
+                <span class="icon">💻</span>
+                <h3>Web Tasarım</h3>
+                <p>Modern, hızlı ve kullanıcı dostu arayüzlerle markanızın dijital yüzünü yeniliyoruz.</p>
+            </div>
+
+            <div class="kart">
+                <span class="icon">📈</span>
+                <h3>Veri Analizi</h3>
+                <p>Sadece rakamlara değil, sonuçlara odaklanarak büyüme hedeflerinizi raporluyoruz.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
