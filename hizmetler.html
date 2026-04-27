@@ -31,23 +31,21 @@
             gap: 20px;
         }
 
-        /* Sol Taraftaki Büyük Dikey Kart */
+        /* Sol Vurgu Alanı */
         .vurgu-alani {
-            flex: 0 0 300px;
+            flex: 0 0 320px;
             background: var(--vurgu-gradyan);
             border-radius: 20px;
             padding: 40px 30px;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            position: relative;
-            overflow: hidden;
         }
 
         .vurgu-alani h2 { font-size: 2rem; margin-bottom: 15px; line-height: 1.2; color: white; }
         .vurgu-alani p { font-size: 1rem; opacity: 0.9; margin-bottom: 25px; color: white; }
 
-        /* Sağ Taraftaki 8'li Grid */
+        /* Sağ Grid */
         .hizmet-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -62,20 +60,22 @@
             transition: 0.3s;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
         }
 
-        .hizmet-kart:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+        .hizmet-kart:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
 
-        .hizmet-kart .ikon { color: #10b981; font-size: 24px; margin-bottom: 15px; }
-        .hizmet-kart h3 { color: var(--yazi-koyu); font-size: 1.1rem; margin: 0 0 10px 0; }
-        .hizmet-kart p { color: var(--yazi-gri); font-size: 0.85rem; margin-bottom: 15px; line-height: 1.4; }
-        .hizmet-kart .detay-link { color: var(--yazi-koyu); text-decoration: none; font-size: 0.8rem; font-weight: bold; border-bottom: 1px solid #ddd; width: fit-content; }
+        .hizmet-kart .ikon { font-size: 28px; margin-bottom: 15px; }
+        .hizmet-kart h3 { color: var(--yazi-koyu); font-size: 1rem; margin: 0 0 10px 0; text-transform: uppercase; letter-spacing: 0.5px; }
+        .hizmet-kart p { color: var(--yazi-gri); font-size: 0.85rem; margin-bottom: 15px; line-height: 1.4; flex-grow: 1; }
+        .hizmet-kart .detay-link { color: var(--ana-mavi); text-decoration: none; font-size: 0.8rem; font-weight: bold; }
 
         @media (max-width: 1024px) {
             .hizmet-bolumu { flex-direction: column; }
-            .vurgu-alani { flex: none; height: 300px; }
+            .vurgu-alani { flex: none; height: 250px; }
             .hizmet-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .hizmet-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -93,59 +93,66 @@
 
     <div class="hizmet-bolumu">
         <div class="vurgu-alani">
-            <h2>Uçtan uca yönetilen dijital operasyon</h2>
-            <p>7/24 kesintisiz destek ve stratejik danışmanlık tek çatı altında.</p>
-            <a href="iletisim.html" style="background:black; color:white; padding:10px 20px; border-radius:30px; text-decoration:none; text-align:center; font-size:0.9rem;">Daha fazla bilgi edinin →</a>
+            <h2>Uçtan Uca Dijital ve Teknik Çözümler</h2>
+            <p>Yazılımdan donanıma, stratejiden güvenliğe kadar tüm ihtiyaçlarınız için profesyonel destek.</p>
+            <a href="iletisim.html" style="background:white; color:#1e293b; padding:12px 20px; border-radius:30px; text-decoration:none; text-align:center; font-size:0.9rem; font-weight:bold;">Bize Ulaşın</a>
         </div>
 
         <div class="hizmet-grid">
             <div class="hizmet-kart">
-                <div class="ikon">🖥️</div>
-                <h3>IT Destek Hizmetleri</h3>
-                <p>Yerinde ve uzaktan 7/24 profesyonel teknik destek.</p>
-                <a href="#" class="detay-link">Daha fazla bilgi edinin</a>
+                <div class="ikon">💻</div>
+                <h3>Web Tasarım</h3>
+                <p>Kullanıcı deneyimi odaklı, modern ve hızlı web arayüzleri geliştiriyoruz.</p>
+                <a href="iletisim.html" class="detay-link">Bilgi Al →</a>
             </div>
-            <div class="hizmet-kart">
-                <div class="ikon">🛡️</div>
-                <h3>Siber Güvenlik</h3>
-                <p>Tehdit analizi ve sürekli güvenlik takibi.</p>
-                <a href="#" class="detay-link">Daha fazla bilgi edinin</a>
-            </div>
-            <div class="hizmet-kart">
-                <div class="ikon">☁️</div>
-                <h3>Sanal Sunucu</h3>
-                <p>Yüksek performanslı bulut altyapı çözümleri.</p>
-                <a href="#" class="detay-link">Daha fazla bilgi edinin</a>
-            </div>
-            <div class="hizmet-kart">
-                <div class="ikon">📡</div>
-                <h3>Network Hizmetleri</h3>
-                <p>Kesintisiz ve güvenli ağ altyapı kurulumu.</p>
-                <a href="#" class="detay-link">Daha fazla bilgi edinin</a>
-            </div>
-            <div class="hizmet-kart">
-                <div class="ikon">📊</div>
-                <h3>Veri Analizi</h3>
-                <p>İşletmenizin verilerini kazanca dönüştürün.</p>
-                <a href="#" class="detay-link">Daha fazla bilgi edinin</a>
-            </div>
-            <div class="hizmet-kart">
-                <div class="ikon">📧</div>
-                <h3>E-Posta Yönetimi</h3>
-                <p>Kurumsal e-posta ve iletişim çözümleri.</p>
-                <a href="#" class="detay-link">Daha fazla bilgi edinin</a>
-            </div>
+
             <div class="hizmet-kart">
                 <div class="ikon">📱</div>
-                <h3>Mobil Uygulama</h3>
-                <p>iOS ve Android için modern uygulama geliştirme.</p>
-                <a href="#" class="detay-link">Daha fazla bilgi edinin</a>
+                <h3>Sosyal Medya Yönetimi</h3>
+                <p>Markanızın dijital sesini güçlendiriyor, etkileşimi zirveye taşıyoruz.</p>
+                <a href="iletisim.html" class="detay-link">Bilgi Al →</a>
             </div>
+
             <div class="hizmet-kart">
-                <div class="ikon">🎨</div>
-                <h3>UI/UX Tasarım</h3>
-                <p>Kullanıcı odaklı modern arayüz tasarımları.</p>
-                <a href="#" class="detay-link">Daha fazla bilgi edinin</a>
+                <div class="ikon">🎴</div>
+                <h3>Dijital Kartvizit</h3>
+                <p>Temassız ve çevre dostu yeni nesil profesyonel tanışma çözümleri.</p>
+                <a href="iletisim.html" class="detay-link">Bilgi Al →</a>
+            </div>
+
+            <div class="hizmet-kart">
+                <div class="ikon">⚙️</div>
+                <h3>IT Hizmeti</h3>
+                <p>Kurumsal altyapı yönetimi ve kesintisiz operasyon desteği sağlıyoruz.</p>
+                <a href="iletisim.html" class="detay-link">Bilgi Al →</a>
+            </div>
+
+            <div class="hizmet-kart">
+                <div class="ikon">🛠️</div>
+                <h3>Teknik Servis</h3>
+                <p>Bilgisayar ve cep telefonu cihazlarınız için uzman onarım hizmeti.</p>
+                <a href="iletisim.html" class="detay-link">Bilgi Al →</a>
+            </div>
+
+            <div class="hizmet-kart">
+                <div class="ikon">🚀</div>
+                <h3>Mobil Uygulama</h3>
+                <p>Fikirlerinizi iOS ve Android platformlarında çalışan ürünlere dönüştürüyoruz.</p>
+                <a href="iletisim.html" class="detay-link">Bilgi Al →</a>
+            </div>
+
+            <div class="hizmet-kart">
+                <div class="ikon">🔒</div>
+                <h3>Siber Güvenlik</h3>
+                <p>Verilerinizi ve dijital varlıklarınızı siber tehditlere karşı koruyoruz.</p>
+                <a href="iletisim.html" class="detay-link">Bilgi Al →</a>
+            </div>
+
+            <div class="hizmet-kart">
+                <div class="ikon">📈</div>
+                <h3>Veri Analizi</h3>
+                <p>Karmaşık verileri anlamlı raporlara dönüştürerek büyümenizi destekliyoruz.</p>
+                <a href="iletisim.html" class="detay-link">Bilgi Al →</a>
             </div>
         </div>
     </div>
