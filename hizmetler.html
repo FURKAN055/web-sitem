@@ -20,7 +20,7 @@
             line-height: 1.6;
         }
 
-        /* NAVİGASYON */
+        /* NAVBAR */
         nav { 
             display: flex; 
             justify-content: space-between; 
@@ -34,94 +34,108 @@
         .menu a { color: white; text-decoration: none; margin-left: 25px; font-weight: 600; transition: 0.3s; }
         .menu a:hover { color: var(--ana-pembe); }
 
-        .container { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
+        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
 
-        /* HİZMETLERİMİZ ÜST PANEL */
-        .pink-header { 
-            background: linear-gradient(135deg, #ff007f 0%, #cc0066 100%); 
-            border-radius: 30px; 
-            padding: 60px 40px; 
-            text-align: center;
-            margin-bottom: 40px;
-            box-shadow: 0 15px 40px rgba(255, 0, 127, 0.3);
-        }
-        .pink-header h1 { font-size: 3rem; font-weight: 900; color: white; margin-bottom: 10px; }
-
-        /* İSTEDİĞİN O ESKİ VE TEMİZ DÜZEN (ALT ALTA/YAN YANA FERAH KARTLAR) */
-        .services-grid { 
-            display: grid; 
-            grid-template-columns: repeat(3, 1fr); 
-            gap: 25px; 
-            margin-bottom: 80px;
-        }
+        /* ÜST BÖLÜM: STRATEJİK ÇÖZÜMLER VE YAN YANA KARTLAR */
+        .hero-flex { display: flex; gap: 20px; margin-bottom: 60px; align-items: stretch; }
         
-        .service-card { 
+        .main-banner { 
+            flex: 1;
+            background: #111; 
+            border: 2px solid var(--ana-pembe);
+            border-radius: 20px; 
+            padding: 40px; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center;
+        }
+        .main-banner h1 { font-size: 2.2rem; font-weight: 800; margin-bottom: 15px; }
+        .main-banner span { color: var(--ana-pembe); }
+        .btn-incele { 
+            background: var(--ana-pembe); color: white; padding: 12px 25px; 
+            border-radius: 8px; text-decoration: none; font-weight: bold; 
+            width: fit-content; margin-top: 20px;
+        }
+
+        .side-services { flex: 1.2; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        
+        /* İSTEDİĞİN O BEYAZ YAN YANA KUTUCUKLAR */
+        .mini-card { 
             background: var(--kart-arkaplan); 
             color: black; 
-            padding: 35px 25px; 
-            border-radius: 20px; 
-            transition: 0.4s; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
+            padding: 20px; 
+            border-radius: 15px; 
+            transition: 0.3s;
         }
-        .service-card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(255, 0, 127, 0.2); }
-        .service-card h3 { font-size: 1.4rem; font-weight: 800; color: #000; display: flex; align-items: center; gap: 10px; }
-        .service-card p { font-size: 0.95rem; color: #444; }
+        .mini-card h3 { font-size: 1.1rem; font-weight: 800; margin-bottom: 8px; }
+        .mini-card p { font-size: 0.85rem; color: #555; }
 
-        /* NEDEN BİZ BÖLÜMÜ */
-        .why-us-section { background: #080808; padding: 100px 0; border-top: 1px solid #1a1a1a; }
-        .why-us-flex { display: flex; max-width: 1200px; margin: 0 auto; padding: 0 20px; gap: 60px; align-items: center; }
-        
-        .why-us-text { flex: 1.6; }
-        .why-us-text h2 { font-size: 3rem; color: var(--ana-pembe); margin-bottom: 25px; font-weight: 900; }
-        .why-us-text p { font-size: 1.1rem; color: #ccc; margin-bottom: 15px; }
-        .vurgu-not { font-size: 1.4rem; color: var(--ana-pembe); font-weight: 800; border-left: 5px solid var(--ana-pembe); padding-left: 20px; margin-top: 30px; }
+        /* ALT HİZMET GRİDİ (DİĞER 3 HİZMET İÇİN) */
+        .bottom-services { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 20px; 
+            margin-bottom: 80px; 
+        }
 
-        .stats-side { flex: 1; display: flex; flex-direction: column; gap: 20px; }
-        .stat-box { background: #111; padding: 30px; border-radius: 20px; text-align: center; border-bottom: 4px solid var(--ana-pembe); }
-        .stat-box h4 { font-size: 2.8rem; color: var(--ana-pembe); font-weight: 900; margin: 0; }
-        .stat-box span { font-size: 0.8rem; color: #aaa; text-transform: uppercase; letter-spacing: 2px; }
+        /* NEDEN BİZ VE SAĞDAKİ İSTATİSTİKLER */
+        .why-section { display: flex; gap: 50px; align-items: center; padding: 60px 0; border-top: 1px solid #222; }
+        .why-content { flex: 1.5; }
+        .why-content h2 { font-size: 2.5rem; margin-bottom: 20px; }
+        .why-content h2 span { color: var(--ana-pembe); }
+        .why-content p { color: #aaa; margin-bottom: 15px; font-size: 1rem; }
 
-        /* WHATSAPP */
-        .whatsapp-btn { 
+        .stats-grid { flex: 1; display: flex; flex-direction: column; gap: 15px; }
+        .stat-item { 
+            background: #111; padding: 25px; border-radius: 15px; text-align: center; 
+            border-bottom: 3px solid var(--ana-pembe);
+        }
+        .stat-item h4 { font-size: 2.2rem; color: var(--ana-pembe); font-weight: 900; }
+        .stat-item p { font-size: 0.8rem; text-transform: uppercase; color: #888; }
+
+        /* FOOTER */
+        footer { background: #000; border-top: 1px solid #222; padding: 40px 8%; display: flex; justify-content: space-between; color: #777; font-size: 0.9rem; }
+
+        /* WHATSAPP BUTONU */
+        .wp-float { 
             position: fixed; bottom: 30px; right: 30px; background: #25d366; 
-            width: 65px; height: 65px; border-radius: 50%; display: flex; 
+            width: 60px; height: 60px; border-radius: 50%; display: flex; 
             align-items: center; justify-content: center; z-index: 2000;
-            border: 2px solid white; box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
         }
 
-        @media (max-width: 1100px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 800px) { 
-            .services-grid { grid-template-columns: 1fr; }
-            .why-us-flex { flex-direction: column; text-align: center; }
-            .vurgu-not { border-left: none; border-top: 4px solid var(--ana-pembe); padding-top: 15px; }
+        @media (max-width: 900px) {
+            .hero-flex, .bottom-services, .why-section { flex-direction: column; grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="index.html" class="logo">TEKNOAY</a>
+        <a href="#" class="logo">TEKNOAY</a>
         <div class="menu">
-            <a href="index.html">Ana Sayfa</a>
-            <a href="hakkimda.html">Hakkımda</a>
-            <a href="hizmetler.html" style="color: var(--ana-pembe);">Hizmetler</a>
-            <a href="iletisim.html">İletişim</a>
+            <a href="#">Ana Sayfa</a>
+            <a href="#">Hakkımda</a>
+            <a href="#" style="color:var(--ana-pembe)">Hizmetler</a>
+            <a href="#">İletişim</a>
         </div>
     </nav>
 
     <div class="container">
-        <div class="pink-header">
-            <h1>Hizmetlerimiz</h1>
-            <p>Profesyonel, güvenilir ve çözüm odaklı bilişim hizmetleri.</p>
+        <div class="hero-flex">
+            <div class="main-banner">
+                <h1>Stratejik Teknoloji <span>Çözümleri</span></h1>
+                <p>İşletmenizin dijital altyapısını modernize ediyor, kurumsal süreçlerinize profesyonel değer katıyoruz.</p>
+                <a href="#" class="btn-incele">Çözümlerimizi İnceleyin</a>
+            </div>
+            <div class="side-services">
+                <div class="mini-card"><h3>Kurumsal Web</h3><p>Yüksek performanslı ve marka kimliğinizle uyumlu sistemler.</p></div>
+                <div class="mini-card"><h3>Dijital Pazarlama</h3><p>Veri odaklı stratejilerle pazar payınızı artırıyoruz.</p></div>
+                <div class="mini-card"><h3>IT Altyapı</h3><p>Kurumsal ağ yönetimi ve sistem güvenliği süreçleri.</p></div>
+                <div class="mini-card"><h3>Teknik Destek</h3><p>Donanım ihtiyaçlarınız için hızlı ve teknik çözümler.</p></div>
+            </div>
         </div>
 
-        <div class="services-grid">
-            <div class="service-card"><h3>💻 Web Tasarım</h3><p>Markanızı dijital dünyada öne çıkaran modern ve kurumsal web arayüzleri geliştiriyoruz.</p></div>
-            <div class="service-card"><h3>📱 Sosyal Medya</h3><p>Sosyal medya hesaplarınızı profesyonel içeriklerle yöneterek etkileşiminizi artırıyoruz.</p></div>
-            <div class="service-card"><h3>⚙️ IT Altyapı Hizmeti</h3><p>Şirket içi ağ kurulumu, sunucu yönetimi ve kesintisiz bilişim desteği sağlıyoruz.</p></div>
-            <div class="service-card"><h3>🛠️ Teknik Servis</h3><p>Arızalı cihazlarınız için hızlı teşhis ve kaliteli parça değişimi ile servis desteği sunuyoruz.</p></div>
-            <div class="service-card"><h3>🛡️ Siber Güvenlik</h3><p>Dijital verilerinizi saldırılara karşı en üst düzey güvenlik önlemleri ile koruma altına alıyoruz.</p></div>
-            <div class="service-card"><h3>
+        <div class="bottom-services">
+            <div class="mini-card"><h3>Siber Güvenlik</h3><p>Verilerinizi en güncel protokoller ile koruma altına alıyoruz.</p></div>
+            <div class="mini-card"><h3>Yazılım Geliştirme</h3><p>İhtiyaçlarınıza özel,
