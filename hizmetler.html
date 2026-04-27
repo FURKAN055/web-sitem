@@ -5,76 +5,187 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hizmetlerimiz - Teknoay Bilişim</title>
     <style>
+        /* 1. RENK AYARLARI */
         :root {
             --arka-plan: #000000;
             --kart-renk: #ffffff;
             --ana-pembe: #ff007f;
             --yazi-koyu: #000000;
             --yazi-gri: #4b5563;
-            --pembe-gradyan: linear-gradient(135deg, #ff007f 0%, #ff66b2 100%);
         }
 
-        body { background-color: var(--arka-plan); color: white; font-family: 'Segoe UI', sans-serif; margin: 0; overflow-x: hidden; }
+        body { 
+            background-color: var(--arka-plan); 
+            color: white; 
+            font-family: 'Segoe UI', Arial, sans-serif; 
+            margin: 0; 
+            padding: 0;
+        }
 
-        /* Navigasyon */
-        nav { display: flex; justify-content: space-around; align-items: center; padding: 20px 0; background: rgba(0, 0, 0, 0.95); border-bottom: 1px solid #333; position: sticky; top: 0; z-index: 1000; }
-        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: 500; transition: 0.3s; }
-        nav a:hover { color: var(--ana-pembe); }
-        .logo { font-size: 24px; font-weight: bold; color: var(--ana-pembe); text-decoration:none; }
+        /* 2. MENÜ (NAVIGASYON) */
+        nav { 
+            display: flex; 
+            justify-content: space-around; 
+            align-items: center; 
+            padding: 20px 0; 
+            background: #000000; 
+            border-bottom: 1px solid #333; 
+        }
+        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; }
+        .logo { font-size: 24px; color: var(--ana-pembe); text-decoration: none; }
 
-        /* Hizmetler Bölümü */
-        .hizmet-bolumu {
+        /* 3. ANA İÇERİK ALANI */
+        .container {
             max-width: 1200px;
-            margin: 60px auto;
+            margin: 50px auto;
             padding: 0 20px;
             display: flex;
-            gap: 25px;
+            gap: 30px;
         }
 
-        /* Sol Vurgu Alanı */
-        .vurgu-alani {
-            flex: 0 0 320px;
-            background: var(--pembe-gradyan);
+        /* SOLDAKİ PEMBE PANEL */
+        .vurgu-panel {
+            flex: 0 0 350px;
+            background: linear-gradient(135deg, #ff007f 0%, #ff66b2 100%);
             border-radius: 20px;
-            padding: 40px 30px;
+            padding: 40px;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            box-shadow: 0 10px 30px rgba(255, 0, 127, 0.3);
+        }
+        .vurgu-panel h2 { font-size: 2rem; margin-bottom: 15px; }
+        .vurgu-panel p { margin-bottom: 30px; opacity: 0.9; }
+        .btn { 
+            background: white; 
+            color: black; 
+            padding: 15px; 
+            text-align: center; 
+            text-decoration: none; 
+            border-radius: 30px; 
+            font-weight: bold; 
         }
 
-        .vurgu-alani h2 { font-size: 2rem; margin-bottom: 15px; color: white; line-height: 1.2; }
-        .vurgu-alani p { font-size: 1rem; color: white; margin-bottom: 25px; font-weight: 500; opacity: 0.9; }
-
-        /* Sağ Grid */
-        .hizmet-grid {
+        /* SAĞDAKİ HİZMET KARTLARI */
+        .hizmet-izgarasi {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
-            flex-grow: 1;
+            flex: 1;
         }
-
-        /* Kart Tasarımı */
-        .hizmet-kart {
-            background: var(--kart-renk);
+        .kart {
+            background: white;
+            color: black;
+            padding: 20px;
             border-radius: 15px;
-            padding: 25px;
-            display: flex;
-            flex-direction: column;
-            border: 2px solid transparent;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            cursor: pointer;
             text-decoration: none;
+            transition: 0.3s;
+            border: 2px solid transparent;
         }
-
-        .hizmet-kart:hover {
-            transform: translateY(-12px);
-            border-color: var(--ana-pembe);
-            box-shadow: 0 20px 40px rgba(255, 0, 127, 0.2);
+        .kart:hover { 
+            transform: translateY(-10px); 
+            border-color: var(--ana-pembe); 
         }
+        .kart h3 { margin-top: 10px; color: var(--yazi-koyu); }
+        .kart p { font-size: 0.9rem; color: var(--yazi-gri); }
 
-        .hizmet-kart .ikon { font-size: 32px; margin-bottom: 15px; display: block; filter: grayscale(100%); transition: 0.3s; }
-        .hizmet-kart:hover .ikon { filter: grayscale(0%); transform: scale(1.2); }
+        /* 4. FOOTER (ALT BÖLÜM) */
+        footer { 
+            background: #000000; 
+            border-top: 2px solid var(--ana-pembe); 
+            padding: 50px 20px; 
+            margin-top: 80px; 
+        }
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1.5fr;
+            gap: 40px;
+        }
+        .footer-box h4 { color: var(--ana-pembe); margin-bottom: 20px; }
+        .footer-box p, .footer-box a { color: white; text-decoration: none; margin-bottom: 10px; display: block; opacity: 0.8; }
 
-        .hizmet-kart h3 { color: var(--yazi-koyu); font-size: 1.1rem; margin: 0 0 12px 0; font-weight: 800; text-transform: uppercase; }
-        .hizmet-kart p { color: var(--yazi-gri); font-size: 0.95rem; margin-bottom: 15px; line-height: 1.
+        /* MOBİL UYUMLULUK */
+        @media (max-width: 900px) {
+            .container { flex-direction: column; }
+            .hizmet-izgarasi { grid-template-columns: 1fr 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">TEKNOAY</a>
+        <div>
+            <a href="index.html">Ana Sayfa</a>
+            <a href="hakkimda.html">Hakkımda</a>
+            <a href="hizmetler.html" style="color: var(--ana-pembe);">Hizmetler</a>
+            <a href="iletisim.html">İletişim</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="vurgu-panel">
+            <h2>Uçtan Uca Dijital ve Teknik Çözümler</h2>
+            <p>Yazılımdan donanıma, tüm teknolojik ihtiyaçlarınız profesyonel ellerde.</p>
+            <a href="iletisim.html" class="btn">Bize Ulaşın</a>
+        </div>
+
+        <div class="hizmet-izgarasi">
+            <a href="iletisim.html" class="kart">
+                <span>💻</span>
+                <h3>Web Tasarım</h3>
+                <p>Modern ve SEO uyumlu web arayüzleri geliştiriyoruz.</p>
+            </a>
+            <a href="iletisim.html" class="kart">
+                <span>📱</span>
+                <h3>Sosyal Medya</h3>
+                <p>Markanızın dijital görünürlüğünü yönetiyoruz.</p>
+            </a>
+            <a href="iletisim.html" class="kart">
+                <span>🎴</span>
+                <h3>Dijital Kart</h3>
+                <p>Yeni nesil, akılda kalıcı iletişim çözümleri.</p>
+            </a>
+            <a href="iletisim.html" class="kart">
+                <span>⚙️</span>
+                <h3>IT Hizmeti</h3>
+                <p>Kurumsal altyapı ve teknik destek süreçleri.</p>
+            </a>
+            <a href="iletisim.html" class="kart">
+                <span>🛠️</span>
+                <h3>Teknik Servis</h3>
+                <p>Bilgisayar ve telefon donanım onarım desteği.</p>
+            </a>
+            <a href="iletisim.html" class="kart">
+                <span>🚀</span>
+                <h3>Mobil Uygulama</h3>
+                <p>iOS ve Android için özel yazılım projeleri.</p>
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-box">
+                <h4>TEKNOAY BİLİŞİM</h4>
+                <p>Teknoloji ve stratejiyi birleştirerek dijital dönüşüme liderlik ediyoruz.</p>
+            </div>
+            <div class="footer-box">
+                <h4>Hızlı Menü</h4>
+                <a href="index.html">Ana Sayfa</a>
+                <a href="hakkimda.html">Hakkımda</a>
+                <a href="iletisim.html">İletişim</a>
+            </div>
+            <div class="footer-box">
+                <h4>İletişim Bilgileri</h4>
+                <p>📍 Üniversite Mah Cami Sok No : 6 AVCILAR/İSTANBUL</p>
+                <p>📧 info@teknoaybilisim.com</p>
+                <p>📞 +90 530 044 81 79</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
