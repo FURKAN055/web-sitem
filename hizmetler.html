@@ -21,32 +21,37 @@
         nav a:hover { color: var(--ana-pembe); }
         .logo { font-size: 24px; color: var(--ana-pembe); font-weight: bold; text-decoration: none; }
 
-        /* ANA KONTEYNER */
         .container { max-width: 1200px; margin: 50px auto; padding: 0 20px; }
 
-        /* ÜST BÖLÜM: PANEL + GRID */
+        /* ÜST ALAN */
         .hero-section { display: flex; gap: 30px; margin-bottom: 80px; }
         .vurgu-panel { flex: 0 0 350px; background: linear-gradient(135deg, #ff007f 0%, #ff66b2 100%); border-radius: 20px; padding: 40px; display: flex; flex-direction: column; justify-content: flex-end; box-shadow: 0 10px 30px rgba(255, 0, 127, 0.3); }
-        .vurgu-panel h2 { font-size: 2rem; margin-bottom: 15px; line-height: 1.2; }
         .hizmet-izgarasi { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; flex: 1; }
         .kart { background: white; color: black; padding: 25px; border-radius: 15px; text-decoration: none; transition: 0.4s; border: 2px solid transparent; }
         .kart:hover { transform: translateY(-10px); border-color: var(--ana-pembe); box-shadow: 0 15px 30px rgba(255, 0, 127, 0.2); }
         .kart h3 { margin: 10px 0; font-weight: 800; text-transform: uppercase; font-size: 1.1rem; }
         .kart p { font-size: 0.9rem; color: var(--yazi-gri); line-height: 1.5; }
 
-        /* YENİ BÖLÜM: İSTATİSTİKLER */
-        .stats-bar { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; text-align: center; margin: 100px 0; border-top: 1px solid #333; border-bottom: 1px solid #333; padding: 40px 0; }
-        .stat-item h3 { font-size: 2.5rem; color: var(--ana-pembe); margin: 0; }
-        .stat-item p { font-size: 1rem; opacity: 0.8; margin-top: 5px; text-transform: uppercase; letter-spacing: 1px; }
+        /* ÖZEL: NEDEN BİZ? (SENİN METNİN) */
+        .neden-biz-section { background: #0a0a0a; padding: 100px 0; border-top: 1px solid #222; border-bottom: 1px solid #222; margin: 80px 0; }
+        .neden-biz-content { max-width: 900px; margin: 0 auto; padding: 0 20px; text-align: center; }
+        .neden-biz-content h2 { font-size: 3rem; color: var(--ana-pembe); margin-bottom: 30px; text-transform: uppercase; letter-spacing: 2px; }
+        .neden-biz-content p { font-size: 1.2rem; line-height: 1.8; color: #eee; margin-bottom: 30px; font-weight: 300; }
+        .neden-vurgu { font-size: 1.5rem; color: var(--ana-pembe); font-weight: bold; margin-top: 40px; font-style: italic; }
 
-        /* YENİ BÖLÜM: NASIL ÇALIŞIRIZ? */
+        /* İSTATİSTİKLER */
+        .stats-bar { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; text-align: center; margin: 80px 0; padding: 40px 0; }
+        .stat-item h3 { font-size: 2.5rem; color: var(--ana-pembe); margin: 0; }
+        .stat-item p { font-size: 1rem; opacity: 0.8; margin-top: 5px; text-transform: uppercase; }
+
+        /* NASIL ÇALIŞIRIZ? */
         .process-section { margin-bottom: 100px; text-align: center; }
         .process-section h2 { font-size: 2.2rem; margin-bottom: 50px; color: var(--ana-pembe); }
         .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-        .process-step { background: #111; padding: 30px; border-radius: 15px; position: relative; }
+        .process-step { background: #111; padding: 30px; border-radius: 15px; position: relative; border: 1px solid #222; }
         .process-step .number { position: absolute; top: -15px; left: 20px; background: var(--ana-pembe); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; }
 
-        /* WHATSAPP BUTONU */
+        /* WHATSAPP */
         .whatsapp-btn { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; text-decoration: none; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000; transition: 0.3s; border: 2px solid white; }
         .whatsapp-btn:hover { transform: scale(1.1); box-shadow: 0 0 20px var(--ana-pembe); }
 
@@ -58,9 +63,9 @@
 
         @media (max-width: 1000px) {
             .hero-section, .process-grid, .footer-grid { grid-template-columns: 1fr; flex-direction: column; }
-            .vurgu-panel { flex: none; }
             .hizmet-izgarasi { grid-template-columns: 1fr 1fr; }
             .stats-bar { grid-template-columns: 1fr; }
+            .neden-biz-content h2 { font-size: 2rem; }
         }
     </style>
 </head>
@@ -86,14 +91,27 @@
 
             <div class="hizmet-izgarasi">
                 <a href="iletisim.html" class="kart"><span>💻</span><h3>Web Tasarım</h3><p>Modern ve SEO uyumlu kurumsal projeler.</p></a>
-                <a href="iletisim.html" class="kart"><span>📱</span><h3>Sosyal Medya</h3><p>Dijital varlığınızı profesyonelce yönetiyoruz.</p></a>
-                <a href="iletisim.html" class="kart"><span>🎴</span><h3>Dijital Kart</h3><p>Hızlı ve akılda kalıcı yeni nesil iletişim.</p></a>
-                <a href="iletisim.html" class="kart"><span>⚙️</span><h3>IT Hizmeti</h3><p>Kurumsal altyapı ve teknik destek süreçleri.</p></a>
-                <a href="iletisim.html" class="kart"><span>🛠️</span><h3>Teknik Servis</h3><p>Cihaz onarımında profesyonel çözümler.</p></a>
-                <a href="iletisim.html" class="kart"><span>🚀</span><h3>Mobil Uygulama</h3><p>iOS ve Android için özel yazılım projeleri.</p></a>
+                <a href="iletisim.html" class="kart"><span>📱</span><h3>Sosyal Medya</h3><p>Markanızın dijital sesini yönetiyoruz.</p></a>
+                <a href="iletisim.html" class="kart"><span>🎴</span><h3>Dijital Kart</h3><p>Hızlı ve çevre dostu iletişim.</p></a>
+                <a href="iletisim.html" class="kart"><span>⚙️</span><h3>IT Hizmeti</h3><p>Kurumsal altyapı kurulum ve destek.</p></a>
+                <a href="iletisim.html" class="kart"><span>🛠️</span><h3>Teknik Servis</h3><p>Cihaz onarımında garantili çözümler.</p></a>
+                <a href="iletisim.html" class="kart"><span>🚀</span><h3>Mobil Uygulama</h3><p>Özel yazılımlarla fark yaratın.</p></a>
             </div>
         </div>
+    </div>
 
+    <section class="neden-biz-section">
+        <div class="neden-biz-content">
+            <h2>Neden Biz?</h2>
+            <p>Dijital dünyada doğru iş ortağını seçmek, başarının en kritik adımlarından biridir. Biz, sadece hizmet sunan bir ekip değil; işinizi büyütmeye odaklanan stratejik bir çözüm ortağıyız.</p>
+            <p>2020 yılından bu yana edindiğimiz saha deneyimiyle, farklı sektörlerin ihtiyaçlarını yakından tanıyor ve her projeye özel çözümler geliştiriyoruz. Standart kalıplar yerine, markanıza ve hedeflerinize uygun, sonuç odaklı çalışmalar sunuyoruz.</p>
+            <p>Geniş hizmet yelpazemiz sayesinde tüm dijital ihtiyaçlarınıza tek noktadan çözüm sağlıyoruz. Web tasarım, sosyal medya yönetimi, yazılım, teknik servis, siber güvenlik ve veri analizi gibi alanlarda entegre hizmet sunarak zaman ve maliyet avantajı yaratıyoruz.</p>
+            <p>Hızlı geri dönüş, şeffaf iletişim ve sürdürülebilir destek anlayışımızla sürecin her aşamasında yanınızda oluyoruz. İşimizi yalnızca tamamlamakla kalmıyor, ölçülebilir başarı ve memnuniyet odaklı ilerliyoruz.</p>
+            <div class="neden-vurgu">"Çünkü biz, işinizi kendi işimiz gibi sahipleniriz."</div>
+        </div>
+    </section>
+
+    <div class="container">
         <div class="stats-bar">
             <div class="stat-item"><h3>10+</h3><p>Yıllık Deneyim</p></div>
             <div class="stat-item"><h3>500+</h3><p>Başarılı Proje</p></div>
@@ -103,10 +121,10 @@
         <div class="process-section">
             <h2>Nasıl Çalışıyoruz?</h2>
             <div class="process-grid">
-                <div class="process-step"><div class="number">1</div><h3>Analiz</h3><p>İhtiyaçlarınızı dinliyor ve en uygun stratejiyi ekiyoruz.</p></div>
-                <div class="process-step"><div class="number">2</div><h3>Planlama</h3><p>Teknik altyapıyı ve tasarım süreçlerini netleştiriyoruz.</p></div>
-                <div class="process-step"><div class="number">3</div><h3>Geliştirme</h3><p>Yüksek kalite standartlarında çözümünüzü üretiyoruz.</p></div>
-                <div class="process-step"><div class="number">4</div><h3>Destek</h3><p>Teslimat sonrası 7/24 teknik desteğe devam ediyoruz.</p></div>
+                <div class="process-step"><div class="number">1</div><h3>Analiz</h3><p>İhtiyacınızı belirliyoruz.</p></div>
+                <div class="process-step"><div class="number">2</div><h3>Planlama</h3><p>Yol haritasını çiziyoruz.</p></div>
+                <div class="process-step"><div class="number">3</div><h3>Geliştirme</h3><p>Projeyi inşa ediyoruz.</p></div>
+                <div class="process-step"><div class="number">4</div><h3>Destek</h3><p>Sürekli yanınızdayız.</p></div>
             </div>
         </div>
     </div>
@@ -117,7 +135,7 @@
         <div class="footer-grid">
             <div class="footer-box">
                 <div class="logo" style="margin-bottom:15px;">TEKNOAY BİLİŞİM</div>
-                <p>Üniversite Mahallesi'nden tüm Türkiye'ye teknoloji köprüsü kuruyoruz. Sizin için buradayız.</p>
+                <p>Üniversite Mahallesi'nden teknoloji köprüsü kuruyoruz. Sizin için buradayız.</p>
             </div>
             <div class="footer-box">
                 <h4>Menü</h4>
