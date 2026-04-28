@@ -3,96 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Furkan - Dijital Çözümler</title>
-    <style>
-        /* Temel Renkler ve Font */
-        :root {
-            --arka-plan: #0b0f19;
-            --kart-renk: #161b28;
-            --ana-mavi: #00d2ff;
-            --yazi-beyaz: #ffffff;
-            --yazi-gri: #94a3b8;
-        }
-
-        body {
-            background-color: var(--arka-plan);
-            color: var(--yazi-beyaz);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            line-height: 1.6;
-        }
-
-        /* Navigasyon Menüsü */
-        nav {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            padding: 20px 0;
-            background: rgba(11, 15, 25, 0.9);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid #1e293b;
-        }
-
-        .logo { font-size: 24px; font-weight: bold; color: var(--ana-mavi); }
-
-        nav a {
-            color: var(--yazi-beyaz);
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: 500;
-            transition: 0.3s;
-        }
-
-        nav a:hover { color: var(--ana-mavi); }
-
-        /* Ana Giriş Bölümü (Hero) */
-        .hero {
-            height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-        }
-
-        .hero h1 { font-size: 3.5rem; margin-bottom: 20px; }
-        .hero p { font-size: 1.2rem; color: var(--yazi-gri); max-width: 600px; }
-
-        .buton {
-            margin-top: 30px;
-            padding: 15px 40px;
-            background: var(--ana-mavi);
-            color: #000;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .buton:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(0, 210, 255, 0.4); }
-
-    </style>
+    <title>Dijital Çözümler Merkezi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
+<body class="apple-theme">
 
-    <nav>
-        <div class="logo">FURKAN</div>
-        <div>
-            <a href="index.html">Ana Sayfa</a>
-            <a href="hakkimda.html">Hakkımda</a>
-            <a href="hizmetler.html">Hizmetler</a>
-            <a href="iletisim.html">İletişim</a>
+    <nav class="global-nav">
+        <div class="nav-content">
+            <a href="#" class="nav-logo">Çözüm<span class="light">Merkezi</span></a>
+            <div class="nav-links">
+                <a href="#hizmetler">Hizmetler</a>
+                <a href="#iletisim">Destek</a>
+            </div>
         </div>
     </nav>
 
-    <div class="hero">
-        <h1>Geleceği Dijitalde <span style="color: var(--ana-mavi);">İnşa Ediyoruz</span></h1>
-        <p>BossyDigital tarzında modern, hızlı ve sonuç odaklı çözümlerle projelerinizi bir üst seviyeye taşıyın.</p>
-        <a href="hizmetler.html" class="buton">Hizmetleri Keşfet</a>
-    </div>
+    <section class="hero">
+        <div class="hero-text-wrapper fade-in">
+            <h1 class="hero-headline">Geleceği tasarlıyoruz.<br>Bugünü onarıyoruz.</h1>
+            <p class="hero-subhead">Yazılımdan donanıma, ihtiyacınız olan tüm dijital ve teknik çözümler tek bir noktada.</p>
+        </div>
+    </section>
 
+    <section id="hizmetler" class="services-grid">
+        <div class="container">
+            
+            <div class="grid-item large-card fade-in-up">
+                <div class="card-content">
+                    <i class="fab fa-instagram service-icon"></i>
+                    <h2>Sosyal Medya Yönetimi</h2>
+                    <p>Markanızın dijital sesini güçlendirin, kitlenizle bağ kurun.</p>
+                </div>
+            </div>
+
+            <div class="grid-item small-card fade-in-up">
+                <div class="card-content">
+                    <i class="fas fa-code service-icon"></i>
+                    <h2>Web Tasarım</h2>
+                </div>
+            </div>
+
+            <div class="grid-item small-card fade-in-up">
+                <div class="card-content">
+                    <i class="fas fa-mobile-alt service-icon"></i>
+                    <h2>Mobil Uygulama</h2>
+                </div>
+            </div>
+
+            <div class="grid-item large-card hardware-card fade-in-up">
+                <div class="card-content">
+                    <i class="fas fa-tools service-icon"></i>
+                    <h2>Teknik Servis</h2>
+                    <p>Bilgisayar ve telefonlarınız için profesyonel onarım çözümleri.</p>
+                </div>
+            </div>
+
+            <div class="grid-item small-card fade-in-up">
+                <div class="card-content">
+                    <i class="fas fa-chart-pie service-icon"></i>
+                    <h2>Veri Analizi</h2>
+                </div>
+            </div>
+
+            <div class="grid-item small-card contact-card fade-in-up">
+                <div class="card-content">
+                    <i class="fas fa-id-card service-icon"></i>
+                    <h2>Dijital Kartvizit</h2>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="apple-footer">
+        <p>&copy; 2026 Çözüm Merkezi. Tüm Hakları Saklıdır.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
